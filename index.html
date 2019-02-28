@@ -46,15 +46,21 @@
 							attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
 						});
 					osmap = L.map('openstreetmap',{
-									maxZoom: 13+3,
+									maxZoom: 19,
 									layers:[streets]
 									})
-							.setView([54.9637944,9.6547830],17);
+							.setView([54.9637944,9.6547830],18);
 					new L.control.layers({
 								'Sat': sat,
 								'Kort': streets
 								})
 							.addTo(osmap);
+//	54,9635583, 9,6548926
+//	54,9636260, 9,6549501
+//	54,9636938, 9,6547084
+//	54,9636271, 9,6546518
+
+//	
 					
 				</script>
 		LugCamp 2019
