@@ -30,16 +30,16 @@
 					.leaflet-pseudo-fullscreen { position: fixed !important; width: 100% !important; height: 100% !important; top: 0px !important; left: 0px !important; z-index: 99999; }
 				</style>
 				<!-- leaflet -->
-				<script			src='/proxy.php/leaflet/leaflet.js'		></script>
-				<link rel='stylesheet'	href='/proxy.php/leaflet/leaflet.css'	/>
+				<script			src='https://kartoteket.alslug.dk/proxy.php/leaflet/leaflet.js'		></script>
+				<link rel='stylesheet'	href='https://katoteket.alslug.dk/proxy.php/leaflet/leaflet.css'	/>
 		
 				<script>
 					var osmap;
-					var sat		= L.tileLayer('/images/proxy.php/map/sat/{z}/{y}/{x}', {
+					var sat		= L.tileLayer('https://katoteket.alslug.dk/images/proxy.php/map/sat/{z}/{y}/{x}', {
 							maxZoom: 19,
 							attribution: 'Tiles &copy; Esri '//&mdash; Source: Esri, i-cubed, USDA, USGS, AEX, GeoEye, Getmapping, Aerogrid, IGN, IGP, UPR-EGP, and the GIS User Community'
 						});
-					var streets	= L.tileLayer('/images/proxy.php/map/street/{z}/{x}/{y}', {
+					var streets	= L.tileLayer('https://katoteket.alslug.dk/images/proxy.php/map/street/{z}/{x}/{y}', {
 							maxZoom: 19,
 							attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
 						});
@@ -53,6 +53,7 @@
 								'Kort': streets
 								})
 							.addTo(osmap);
+					
 				</script>
 	</body>
 </html>
