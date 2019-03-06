@@ -94,7 +94,15 @@
 					var bib_n =	[bib_v[0]+offset[0],bib_v[1]+offset[1]];
 					var bib_e =	[bib_s[0]+offset[0],bib_s[1]+offset[1]];
 					setmarker([	[54.9635583,9.6548926],	[54.9636260,9.6549501],	[54.9636938,9.6547084],	[54.9636271, 9.6546518]	],
-								'red',	'Dining-area and kicthen');
+								'red',	'Dining-area');
+					var kitchen_e = [54.9635327,9.6548693];
+					var kitchen_s = [54.9634586,9.6548063];
+					var nr8_v = 	[54.9635785,9.6543785];
+					offset = [(nr8_v[0]-kitchen_s[0])*0.33,(nr8_v[1]-kitchen_s[1])*0.33];
+					var kitchen_v = [kitchen_s[0]+offset[0],kitchen_s[1]+offset[1]];
+					var kitchen_n = [kitchen_e[0]+offset[0],kitchen_e[1]+offset[1]];
+					setmarker([	kitchen_e,kitchen_s,kitchen_v,kitchen_n],
+								'red',	'Professional kitchen');
 					setmarker([	[54.9639617,9.6547191],	[54.9640286,9.6548037],	[54.9639510,9.6550907],	[54.96388,9.65504]	],
 								'red',	'Gym'						+'<br/>'+
 									'main computing-area'				);
