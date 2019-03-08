@@ -8,8 +8,16 @@
 <style>
 body,h1,h2,h3,h4,h5 {font-family: "Poppins", sans-serif}
 body {font-size:16px;}
-.w3-half img{margin-bottom:-6px;margin-top:16px;opacity:0.8;cursor:pointer}
+.w3-half img #openstreetmap_c {margin-bottom:-6px;margin-top:16px;opacity:0.8;cursor:pointer}
 .w3-half img:hover{opacity:1}
+
+#map { width: 100%; height: 346px; }
+.fullscreen-icon { background-image: url(/icon-fullscreen.png); }
+// on selector per rule as explained here : http://www.sitepoint.com/html5-full-screen-api/
+#map:-webkit-full-screen { width: 100% !important; height: 100% !important; z-index: 99999; }
+#map:-moz-full-screen { width: 100% !important; height: 100% !important; z-index: 99999; }
+#map:full-screen { width: 100% !important; height: 100% !important; z-index: 99999; }
+.leaflet-pseudo-fullscreen { position: fixed !important; width: 100% !important; height: 100% !important; top: 0px !important; left: 0px !important; z-index: 99999; }
 </style>
 <body>
 
@@ -64,17 +72,33 @@ body {font-size:16px;}
   </div>
   <div class="w3-row-padding">
     <div class="w3-half">
-      <img src="https://www.w3schools.com/w3images/kitchenconcrete.jpg" style="width:100%" onclick="onClick(this)" alt="Concrete meets bricks">
+      <img src="https://www.w3schools.com/w3images/atrium.jpg" style="width:100%" onclick="onClick(this)" alt="Light, white and tight scandinavian d_esign">
       <img src="https://www.w3schools.com/w3images/livingroom.jpg" style="width:100%" onclick="onClick(this)" alt="Light, white and tight scandinavian d_esign">
       <img src="https://www.w3schools.com/w3images/diningroom.jpg" style="width:100%" onclick="onClick(this)" alt="White walls with d_esigner chairs">
     </div>
 
     <div class="w3-half">
-      <img src="https://www.w3schools.com/w3images/atrium.jpg" style="width:100%" onclick="onClick(this)" alt="Windows for the atrium">
+      <img src="https://www.w3schools.com/w3images/kitchenconcrete.jpg" style="width:100%" onclick="onClick(this)" alt="Concrete meets bricks">
       <img src="https://www.w3schools.com/w3images/bedroom.jpg" style="width:100%" onclick="onClick(this)" alt="Bedroom and office in one space">
       <img src="https://www.w3schools.com/w3images/livingroom2.jpg" style="width:100%" onclick="onClick(this)" alt="Scandinavian d_esign">
     </div>
   </div>
+  <br/>
+  <div class="w3-row-padding">
+      <div id='openstreetmap_c'>
+      <div id='openstreetmap' style='width:100%; height:400px; float:right;'>
+        <div id='interlude'
+                   style='text-align: center; line-height: 300px; font-weight: bold; border: 1px dotted grey; background-color: #eee;'>
+          Map currently unavailable.
+        </div>
+      </div>
+      </div>
+  </div>
+<!-- leaflet -->
+<script			src='https://kartoteket.alslug.dk/proxy.php/leaflet/leaflet.js'		></script>
+<link rel='stylesheet'	href='https://kartoteket.alslug.dk/proxy.php/leaflet/leaflet.css'	/>
+<script src="map.js"></script>
+
 
   <!-- Modal for full size images on click-->
   <div id="modal01" class="w3-modal w3-black" style="padding-top:0" onclick="this.style.display='none'">
