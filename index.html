@@ -1,40 +1,326 @@
-<!doctype html>
-<html>
-	<head>
-		<meta charset="utf-8">
-		<meta http-equiv="X-UA-Compatible" content="chrome=1">
-		<title>LugCamp 2019 - Alssund Linux Brugergruppe</title>
+<!DOCTYPE html>
+<html lang="en">
+<title>LugCamp 2019 in Denmark</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins">
+<style>
+body,h1,h2,h3,h4,h5 {font-family: "Poppins", sans-serif}
+body {font-size:16px;}
+.w3-half img #openstreetmap_c {margin-bottom:-6px;margin-top:16px;opacity:0.8;cursor:pointer}
+.w3-half img:hover{opacity:1}
 
-		<link rel="stylesheet" href="https://kartoteket.alslug.dk/stylesheets/styles.css">
-		<link rel="stylesheet" href="https://kartoteket.alslug.dk/stylesheets/github-light.css">
-		<meta name="viewport" content="width=device-width">
-		<!--[if lt IE 9]>
-			<script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-		<![endif]-->
+#map { width: 100%; height: 346px; }
+.fullscreen-icon { background-image: url(/icon-fullscreen.png); }
+// on selector per rule as explained here : http://www.sitepoint.com/html5-full-screen-api/
+#map:-webkit-full-screen { width: 100% !important; height: 100% !important; z-index: 99999; }
+#map:-moz-full-screen { width: 100% !important; height: 100% !important; z-index: 99999; }
+#map:full-screen { width: 100% !important; height: 100% !important; z-index: 99999; }
+.leaflet-pseudo-fullscreen { position: fixed !important; width: 100% !important; height: 100% !important; top: 0px !important; left: 0px !important; z-index: 99999; }
+#.en { display:none; }
+.de { display:none; }
+#p.de { display:block; }
+#span.de { display:inline; }
+#li.de { display:list-item; }
+</style>
+<body>
+
+<!-- Sidebar/menu -->
+<nav class="w3-sidebar w3-red w3-collapse w3-top w3-large w3-padding" style="z-index:3;width:300px;font-weight:bold;" id="mySidebar"><br>
+  <a href="javascript:void(0)" onclick="w3_close()" class="w3-button w3-hide-large w3-display-topleft" style="width:100%;font-size:22px">Close Menu</a>
+  <div class="w3-container">
+    <h3 class="w3-padding-64"><b>LugCamp<br/>2019</b></h3>
+  </div>
+  <div class="w3-bar-block">
+    <a href="#" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Home</a> 
+    <a href="#plans" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Plans</a> 
+    <a href="#pictures" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Pictures</a> 
+    <a href="#external" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">External tours</a> 
+    <a href="#pricing" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Pricing</a> 
+    <a href="#contact" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Contact</a>
+  </div>
+</nav>
+
+<!-- Top menu on small screens -->
+<header class="w3-container w3-top w3-hide-large w3-red w3-xlarge w3-padding">
+  <a href="javascript:void(0)" class="w3-button w3-red w3-margin-right" onclick="w3_open()">☰</a>
+  <span>LugCamp 2019</span>
+</header>
+
+<!-- Overlay effect when opening sidebar on small screens -->
+<div class="w3-overlay w3-hide-large" onclick="w3_close()" style="cursor:pointer" title="close side menu" id="myOverlay"></div>
+
+<!-- !PAGE CONTENT! -->
+<div class="w3-main" style="margin-left:340px;margin-right:40px">
+
+  <!-- Header -->
+  <div class="w3-container" style="margin-top:80px">
+    <h1 class="w3-jumbo"><b>LugCamp 2019</b></h1>
+    <h1>Thurday 30. may - sunday 2. june</h1>
+    <p class="en">Welcome to LugCamp.de 2019 in Denmark, hosted by AlsLUG located in Ullerup
+			outside Sønderborg, approx. 30km from the German border.</p>
+    <p class="de">Willkommen bei LugCamp.de 2019 in Dänemark, veranstaltet von AlsLUG in Ullerup
+			außerhalb von Sønderborg, 30 km von der deutschen Grenze entfernt.</p>
+  </div>
+
+  <!-- Plans -->
+  <div class="w3-container" id="plans" sty_le="margin-top:75px">
+    <h1 class="w3-xxxlarge w3-text-red"><b>Plans.</b></h1>
+    <hr style="width:50px;border:5px solid red" class="w3-round">
+    <p class="en">The camp will be held on a former school,
+			were we will have:</p>
+    <p class="de">Das Camp wird in einer ehemaligen Schule abgehalten,
+			wo wir folgendes zur Verfügung haben werden</p>
+    <ul>
+      <li class="en">Primary LAN-area in the gym.</li>
+      <li class="de">Primärer LAN-Bereich in der Turnhalle.</li>
+      <li>Meeting-room for presentations etc in the space of AlsLUG.</li>
+      <li>Meeting-room for presentations etc in the old library.</li>
+      <li>Seperate dining-area.</li>
+      <li>Fiber-connection to the net.</li>
+      <li>Wifi in the entire school.</li>
+      <li>Camping-area for tents on the lawn behind the school.</li>
+      <li>Camping-area for caravans and mobile-homes in the school-yard.</li>
+      <li>Various presentations. Do you have a topic you want to tell us about?<div>Please send a mail to
+		<a href="mailto:lugcamp-info@alslug.dk">lugcamp-info@alslug.dk</a>
+		with details, so we can publish a list here on the site.
+		</div></li>
+      <li>One or two external excursions</li>
+    </ul>
+    <p>
+      Hope to see you in Ullerup
+    </p>
+    <p>
+      <div style="background:red;">Please remeber to bring your passport or other valid travel-id.</div>
+      <div style="background:red;">There is border-control when you cross the border into Denmark.</div>
+    </p>
+  </div>
+  <br/>
+  <div class="w3-row-padding">
+      <div id='openstreetmap_c'>
+      <div id='openstreetmap' style='width:100%; height:400px; float:right;'>
+        <div id='interlude'
+                   style='text-align: center; line-height: 300px; font-weight: bold; border: 1px dotted grey; background-color: #eee;'>
+          Map currently unavailable.
+        </div>
+      </div>
+      </div>
+  </div>
+  <div class="w3-row-padding">
+    <div><b>	Bakkensbro Aktivitets- og Kulturcenter	    </b></div>
+    <div>	Bakkensbro 6, Ullerup			    </div>
+    <div>	DK - 6400 Sønderborg			    </div>
+  </div>
+<!-- leaflet -->
+<script			src='https://kartoteket.alslug.dk/proxy.php/leaflet/leaflet.js'		></script>
+<link rel='stylesheet'	href='https://kartoteket.alslug.dk/proxy.php/leaflet/leaflet.css'	/>
+<script src="map.js"></script>
+  
+  <!-- Photo grid (modal) -->
+  <div class="w3-container" style="margin-top:75px" id="pictures">
+    <h1 class="w3-xxxlarge w3-text-red"><b>Pictures.</b></h1>
+    <hr style="width:50px;border:5px solid red" class="w3-round">
+    <p>
+      I'll post some images of the site shortly.
+    </p>
+  </div>
 <!--
-		<script src="https://kat-oteket.alslug.dk/javascripts/w3data.js"></script>
+  <div class="w3-row-padding">
+    <div class="w3-half">
+      <img src="https://www.w3schools.com/w3images/atrium.jpg" style="width:100%" onclick="onClick(this)" alt="Light, white and tight scandinavian d_esign">
+      <img src="https://www.w3schools.com/w3images/livingroom.jpg" style="width:100%" onclick="onClick(this)" alt="Light, white and tight scandinavian d_esign">
+      <img src="https://www.w3schools.com/w3images/diningroom.jpg" style="width:100%" onclick="onClick(this)" alt="White walls with d_esigner chairs">
+    </div>
+
+    <div class="w3-half">
+      <img src="https://www.w3schools.com/w3images/kitchenconcrete.jpg" style="width:100%" onclick="onClick(this)" alt="Concrete meets bricks">
+      <img src="https://www.w3schools.com/w3images/bedroom.jpg" style="width:100%" onclick="onClick(this)" alt="Bedroom and office in one space">
+      <img src="https://www.w3schools.com/w3images/livingroom2.jpg" style="width:100%" onclick="onClick(this)" alt="Scandinavian d_esign">
+    </div>
+  </div>
 -->
-	</head>
-	<body>
-		<div id='openstreetmap' style='width:400px; height:400px; float:right;'>
-			<div id='interlude'
-				style='text-align: center; line-height: 400px; font-weight: bold; border: 1px dotted grey; background-color: #eee;'>
-				Map currently unavailable.
-			</div>
-		</div>
-				<style type='text/css'>
-			//		#map { width: 700px; height: 433px; }
-					.fullscreen-icon { background-image: url(/icon-fullscreen.png); }
-					// on selector per rule as explained here : http://www.sitepoint.com/html5-full-screen-api/
-					#map:-webkit-full-screen { width: 100% !important; height: 100% !important; z-index: 99999; }
-					#map:-moz-full-screen { width: 100% !important; height: 100% !important; z-index: 99999; }
-					#map:full-screen { width: 100% !important; height: 100% !important; z-index: 99999; }
-					.leaflet-pseudo-fullscreen { position: fixed !important; width: 100% !important; height: 100% !important; top: 0px !important; left: 0px !important; z-index: 99999; }
-				</style>
-				<!-- leaflet -->
-				<script			src='https://kartoteket.alslug.dk/proxy.php/leaflet/leaflet.js'		></script>
-				<link rel='stylesheet'	href='https://kartoteket.alslug.dk/proxy.php/leaflet/leaflet.css'	/>
-				<script src=map.js></script>
-		LugCamp 2019
-	</body>
+
+  <!-- Modal for full size images on click-->
+  <div id="modal01" class="w3-modal w3-black" style="padding-top:0" onclick="this.style.display='none'">
+    <span class="w3-button w3-black w3-xxlarge w3-display-topright">×</span>
+    <div class="w3-modal-content w3-animate-zoom w3-center w3-transparent w3-padding-64">
+      <img id="img01" class="w3-image">
+      <p id="caption"></p>
+    </div>
+  </div>
+
+  <!-- External -->
+  <div class="w3-container" id="external" style="margin-top:75px">
+    <h1 class="w3-xxxlarge w3-text-red"><b>External tours.</b></h1>
+    <hr style="width:50px;border:5px solid red" class="w3-round">
+    <p>We'll also be looking on things around the site.
+		We hope to be able to arrange tours to these atractions.</p>
+    <p>Pricing for the tours will be published shortly.</p>
+  </div>
+
+  <!-- The Team -->
+  <div class="w3-row-padding w3-grayscale">
+    <div class="w3-col m4 w3-margin-bottom">
+      <div class="w3-light-grey">
+        <img src="sdbg_slot.jpg" alt="Sønderborg Slot" style="width:100%">
+        <div class="w3-container">
+          <h3>Sønderborg Slot</h3>
+          <p class="w3-opacity">Museum</p>
+          <p><a target='_blank' href='https://msj.dk/en/soenderborg-castle/'>
+		At Sønderborg Castle you will be told the tale of the dukes,
+		the (Schleswig) wars and the Reunification in 1920.
+          </a></p>
+          <p><!-- Sønderborg Castle, in its magnificent setting close to the seaward approach
+		to Sønderborg, is a Danish national icon. -->The castle holds almost 800 years
+		of Southern Jutland and Schleswig’s dramatic history. The many rooms show
+		modern exhibitions about the turbulent history of Southern Jutland and the
+		border country, the Danish King Christian II's imprisonment at the castle,
+		the Danish defeat in 1864 and the many Danes participating in World War I
+		on the German side prior to the Reunification in 1920.</p>
+		<!-- 80/person + 450(fredag)/900(torsdag/lørdag) for rundvisning -->
+        </div>
+      </div>
+    </div>
+    <div class="w3-col m4 w3-margin-bottom">
+      <div class="w3-light-grey">
+        <img src="dybboel.jpg" alt="Dybbøl Banke" style="width:100%">
+        <div class="w3-container">
+          <h3>1864 / Dybbøl Banke</h3>
+          <p class="w3-opacity">The war 1864</p>
+          <p><a target='_blank' href='https://1864.dk/the-war-1864/?lang=en'>
+            Why did we have the war and what happened?
+            We give you a short introduction to the war 1864.
+          </a></p>
+          <p>The story about 1864 deals with an armed conflict between
+            European Great Powers and a smaller state.
+            The conflict originated in a disagreement about finding a solution
+            for the national belonging but it was also concerned with the constitutional,
+            social and human costs of the war.</p>
+		<!-- 120/person -->
+        </div>
+      </div>
+    </div>
+    <div class="w3-col m4 w3-margin-bottom">
+      <div class="w3-light-grey">
+        <img src="universe.jpg" alt="Universe" style="width:100%">
+        <div class="w3-container">
+          <h3>Universe</h3>
+          <p class="w3-opacity">Science Park</p>
+          <p><a target='_blank' href='https://universe.dk/en'>
+            The adventure park, where fun is a science</a></p>
+          <p>Our aim at Danfoss Universe is to share our passion for science,
+            technology and innovation with children and young people.
+            So we have filled the park with a wealth of fabulous experiences and attractions.
+            On your visit you can try lifting a car, build your own water rocket or
+            roam around a virtual world.
+            There are a host of awesome activities waiting to be explored.</p>
+		<!-- 195/person -->
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Packages / Pricing Tables -->
+  <div class="w3-container" id="pricing" style="margin-top:75px">
+    <h1 class="w3-xxxlarge w3-text-red"><b>Pricing and registration.</b></h1>
+    <hr style="width:50px;border:5px solid red" class="w3-round">
+    <p>Prices and registration will come online shortly.
+		</p>
+  </div>
+
+<!--
+  <div class="w3-row-padding">
+    <div class="w3-half w3-margin-bottom">
+      <ul class="w3-ul w3-light-grey w3-center">
+        <li class="w3-dark-grey w3-xlarge w3-padding-32">Basic</li>
+        <li class="w3-padding-16">Floorplanning</li>
+        <li class="w3-padding-16">10 hours support</li>
+        <li class="w3-padding-16">Photography</li>
+        <li class="w3-padding-16">20% furniture discount</li>
+        <li class="w3-padding-16">Good deals</li>
+        <li class="w3-padding-16">
+          <h2>$ 199</h2>
+          <span class="w3-opacity">per room</span>
+        </li>
+        <li class="w3-light-grey w3-padding-24">
+          <button class="w3-button w3-white w3-padding-large w3-hover-black">Sign Up</button>
+        </li>
+      </ul>
+    </div>
+        
+    <div class="w3-half">
+      <ul class="w3-ul w3-light-grey w3-center">
+        <li class="w3-red w3-xlarge w3-padding-32">Pro</li>
+        <li class="w3-padding-16">Floorplanning</li>
+        <li class="w3-padding-16">50 hours support</li>
+        <li class="w3-padding-16">Photography</li>
+        <li class="w3-padding-16">50% furniture discount</li>
+        <li class="w3-padding-16">GREAT deals</li>
+        <li class="w3-padding-16">
+          <h2>$ 249</h2>
+          <span class="w3-opacity">per room</span>
+        </li>
+        <li class="w3-light-grey w3-padding-24">
+          <button class="w3-button w3-red w3-padding-large w3-hover-black">Sign Up</button>
+        </li>
+      </ul>
+    </div>
+  </div>
+-->
+  
+  <!-- Contact -->
+  <div class="w3-container" id="contact" style="margin-top:75px">
+    <h1 class="w3-xxxlarge w3-text-red"><b>Contact.</b></h1>
+    <hr style="width:50px;border:5px solid red" class="w3-round">
+    <p>Do you have any questions regarding the camp, please send a mail til 
+		<a href="mailto:lugcamp-info@alslug.dk">lugcamp-info@alslug.dk</a>.
+		English, german and danish will be fine, but expect to get the answer in english</p>
+<!--
+    <form action="/action_page.php" target="_blank">
+      <div class="w3-section">
+        <label>Name</label>
+        <input class="w3-input w3-border" type="text" name="Name" required>
+      </div>
+      <div class="w3-section">
+        <label>Email</label>
+        <input class="w3-input w3-border" type="text" name="Email" required>
+      </div>
+      <div class="w3-section">
+        <label>Message</label>
+        <input class="w3-input w3-border" type="text" name="Message" required>
+      </div>
+      <button type="submit" class="w3-button w3-block w3-padding-large w3-red w3-margin-bottom">Send Message</button>
+    </form>  
+-->
+  </div>
+
+<!-- End page content -->
+</div>
+
+<!-- W3.CSS Container -->
+<div class="w3-light-grey w3-container w3-padding-32" style="margin-top:75px;padding-right:58px"><p class="w3-right">Powered by <a href="https://www.w3schools.com/w3css/default.asp" title="W3.CSS" target="_blank" class="w3-hover-opacity">w3.css</a></p></div>
+
+<script>
+// Script to open and close sidebar
+function w3_open() {
+  document.getElementById("mySidebar").style.display = "block";
+  document.getElementById("myOverlay").style.display = "block";
+}
+ 
+function w3_close() {
+  document.getElementById("mySidebar").style.display = "none";
+  document.getElementById("myOverlay").style.display = "none";
+}
+
+// Modal Image Gallery
+function onClick(element) {
+  document.getElementById("img01").src = element.src;
+  document.getElementById("modal01").style.display = "block";
+  var captionText = document.getElementById("caption");
+  captionText.innerHTML = element.alt;
+}
+</script>
+
+</body>
 </html>
