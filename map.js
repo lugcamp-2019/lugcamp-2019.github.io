@@ -77,7 +77,7 @@ setmarker([	alslug_s,		alslug_v,		alslug_n,		alslug_e		],
 									'meeting-room with net/power on the tables'	+'<br/>'+
 									'~20 seated people'				);
 setmarker([	[54.9639617,9.6547191],	[54.9640286,9.6548037],	[54.9640705,9.6548381],	[54.9641139,9.6546778],	[54.9640083,9.6545912]	],
-								'blue',	'Shower and toilets for the gym');
+								'red',	'Shower and toilets for the gym');
 setmarker([	[54.96403,9.6551],	[54.96431,9.65526],	[54.96440,9.65489],	[54.96413,9.65464]	],
 								'green','Area for tents');
 var gaard_e = [54.9637946,9.6553371];
