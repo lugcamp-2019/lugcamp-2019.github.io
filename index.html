@@ -18,12 +18,12 @@ body {font-size:16px;}
 #map:-moz-full-screen { width: 100% !important; height: 100% !important; z-index: 99999; }
 #map:full-screen { width: 100% !important; height: 100% !important; z-index: 99999; }
 .leaflet-pseudo-fullscreen { position: fixed !important; width: 100% !important; height: 100% !important; top: 0px !important; left: 0px !important; z-index: 99999; }
-#.en { display:none; }
 .de { display:none; }
-#p.de { display:block; }
-#span.de { display:inline; }
-#li.de { display:list-item; }
+#.en { display:none; }
+.da { display:none; }
+.pending { background:yellow; }
 </style>
+<script src="jquery.min.js"></script>
 <body>
 
 <!-- Sidebar/menu -->
@@ -33,7 +33,12 @@ body {font-size:16px;}
     <h3 class="w3-padding-64"><b>LugCamp<br/>2019</b></h3>
   </div>
   <div class="w3-bar-block">
-    <a href="#" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Home</a> 
+    <div class="w3-bar-item w3-button">
+      <a href="#" onclick="switch_to('da')"><img src="da.png" /></a>
+      <a href="#" onclick="switch_to('de')"><img src="de.png" /></a>
+      <a href="#" onclick="switch_to('en')"><img src="en.png" /></a>
+    </div>
+    <a href="#" onclick="w3_close()" class="w3-bar-item w3-button">Home</a> 
     <a href="#plans" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Plans</a> 
     <a href="#pictures" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Pictures</a> 
     <a href="#external" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">External tours</a> 
@@ -57,7 +62,14 @@ body {font-size:16px;}
   <!-- Header -->
   <div class="w3-container" style="margin-top:80px">
     <h1 class="w3-jumbo"><b>LugCamp 2019</b></h1>
-    <h1>Thurday 30. may - sunday 2. june</h1>
+    <h1 class="da">Torsdag 30. maj - søndag 2. juni</h1>
+    <h1 class="en">Thurday 30. may - sunday 2. june</h1>
+    <h1 class="de">Donnerstag 30. Mai - Sontag 2. Juni</h1>
+    <h2 class="da">(Kr. Himmelfart + weekend)</h2>
+    <h2 class="en">(Ascension Day + weekend)</h2>
+    <h2 class="de">(Himmelfahrt + Wochenende)</h2>
+    <p class="da">Velkommen tilLugCamp.de 2019 i Danmark, afholdt af AlsLUG i Ullerup
+			udenfor Sønderborg.</p>
     <p class="en">Welcome to LugCamp.de 2019 in Denmark, hosted by AlsLUG located in Ullerup
 			outside Sønderborg, approx. 30km from the German border.</p>
     <p class="de">Willkommen bei LugCamp.de 2019 in Dänemark, veranstaltet von AlsLUG in Ullerup
@@ -68,32 +80,69 @@ body {font-size:16px;}
   <div class="w3-container" id="plans" sty_le="margin-top:75px">
     <h1 class="w3-xxxlarge w3-text-red"><b>Plans.</b></h1>
     <hr style="width:50px;border:5px solid red" class="w3-round">
-    <p class="en">The camp will be held on a former school,
-			were we will have:</p>
-    <p class="de">Das Camp wird in einer ehemaligen Schule abgehalten,
-			wo wir folgendes zur Verfügung haben werden</p>
+
+    <p class="da">Campen afholdes på en tidligere skole, hvor der vil være adgang til følgende:</p>
+    <p class="en">The camp will be held on a former school, were we will have:</p>
+    <p class="de">Das Camp wird in einer ehemaligen Schule abgehalten, wo wir folgendes zur Verfügung haben werden</p>
+
     <ul>
+      <li class="da">LAN område i gynmastiksalen.</li>
       <li class="en">Primary LAN-area in the gym.</li>
       <li class="de">Primärer LAN-Bereich in der Turnhalle.</li>
-      <li>Meeting-room for presentations etc in the space of AlsLUG.</li>
-      <li>Meeting-room for presentations etc in the old library.</li>
-      <li>Seperate dining-area.</li>
-      <li>Fiber-connection to the net.</li>
-      <li>Wifi in the entire school.</li>
-      <li>Camping-area for tents on the lawn behind the school.</li>
-      <li>Camping-area for caravans and mobile-homes in the school-yard.</li>
-      <li>Various presentations. Do you have a topic you want to tell us about?<div>Please send a mail to
+
+      <li class="da">Mødelokale for foredrag etc in AlsLUGs lokaler.</li>
+      <li class="en">Meeting-room for presentations etc in the space of AlsLUG.</li>
+      <li class="de">Besprechungsraum für Präsentationen usw. im Raum der AlsLUG.</li>
+
+      <li class="da">Mulighed for overnatning i det gamle bibliotek.</li>
+      <li class="en">Possibility of accommodation in the old library.</li>
+      <li class="de">Möglichkeit der Unterbringung in der alten Bibliothek.</li>
+
+      <li class="da">Seperate spise- og hygge område.</li>
+      <li class="en">Seperate dining-area.</li>
+      <li class="de">Separate Essbereich.</li>
+
+      <li class="da">Fiber-forbindelse til nettet.</li>
+      <li class="en">Fiber-connection to the net.</li>
+      <li class="de">Glasfaserverbindung zum Netz.</li>
+
+      <li class="da">WiFi på hele området</li>
+      <li class="en">Wifi in the entire area</li>
+      <li class="de">Wifi im gesamten Bereich</li>
+
+      <li class="da">Campingplads til telte på græsplænen bag skolen.</li>
+      <li class="en">Camping-area for tents on the lawn behind the school.</li>
+      <li class="de">Zeltplatz auf dem Rasen hinter der Schule.</li>
+
+      <li class="da">Campingområde for campingvogne og mobilhomes i skolegården.</li>
+      <li class="en">Camping area for caravans and mobile homes in the schoolyard.</li>
+      <li class="de">Camping für Wohnwagen und Wohmmobile im Hof.</li>
+
+      <li>
+		<div class="da">Forskellige foredrag. Har du noget du vil fortælle om?
+					Så send en mail til</div>
+		<div class="en">Various presentations. Do you have a topic you want to tell us about?
+					Please send a mail to</div>
+		<div class="da">Verschiedene Präsentationen. Haben Sie ein Thema, über das Sie
+					uns erzählen möchten? Bitte senden Sie eine Mail an</div>
 		<a href="mailto:lugcamp-info@alslug.dk">lugcamp-info@alslug.dk</a>
-		with details, so we can publish a list here on the site.
-		</div></li>
-      <li>One or two external excursions</li>
+		<div class="da">med detaljer, så vi kan lave en liste her på siden.</div>
+		<div class="en">with details, so we can publish a list here on the site.</div>
+		<div class="de">mit Details, damit wir eine Liste hier auf der Site veröffentlichen können.</div>
+      </li>
+      <li class="da">Et par udflugter ud i området.</li>
+      <li class="en">A few excursions out in the area.</li>
+      <li class="de">Ein paar Ausflüge in die Umgebung.</li>
     </ul>
+    <p class="da">Vi håber at se dig i Ullerup.</p>
+    <p class="en">We hope to see you in Ullerup.</p>
+    <p class="de">Wir hoffen, Sie in Ullerup zu sehen.</p>
     <p>
-      Hope to see you in Ullerup
-    </p>
-    <p>
-      <div style="background:red;">Please remeber to bring your passport or other valid travel-id.</div>
-      <div style="background:red;">There is border-control when you cross the border into Denmark.</div>
+      <div class="en" style="background:red;">Please remeber to bring your passport or other valid travel-id.</div>
+      <div class="en" style="background:red;">There is border-control when you cross the border into Denmark.</div>
+
+      <div class="de" style="background:red;">Bitte denken Sie daran, Ihren Reisepass oder eine andere gültige Reise-ID mitzubringen.</div>
+      <div class="de" style="background:red;">Wenn Sie die Grenze nach Dänemark überqueren, gibt es Grenzkontrolle.</div>
     </p>
   </div>
   <br/>
@@ -319,6 +368,21 @@ function onClick(element) {
   document.getElementById("modal01").style.display = "block";
   var captionText = document.getElementById("caption");
   captionText.innerHTML = element.alt;
+}
+
+// Language selection
+function hide(lang) {
+  var x = document.getElementsByClassName(lang);
+  var i;
+  for (i = 0; i < x.length; i++) {
+    x[i].style.display = "none";
+  } 
+}
+function switch_to(lang) {
+  $(".da").hide();
+  $(".en").hide();
+  $(".de").hide();
+  $("."+lang).show();
 }
 </script>
 
