@@ -1,10 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
-<title>LugCamp 2019 in Denmark</title>
+<title>LugCamp(.de) 2019 in Denmark</title>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins">
+<script>
+	///////////////////////////////////////////////////////////
+	//
+	//	Priser
+	//
+	var pris_camp_adult		= 40000000.00;							// 700.00;
+	var pris_camp_young		= 40000000.00;							// 700.00;
+	var pris_camp_child		= 20000000.00;							// 300.00;
+	var pris_camp_smallchild	= 10000000.00;							//   0.00;
+	var pris_slottet_adult		=   400000.00;							// 125.00;
+	var pris_slottet_young		=   200000.00;	var pris_slottet_child = pris_slottet_young;	//  45.00;
+	var pris_slottet_smallchild	=   100000.00;							//   0.00;
+	var pris_stjerne_adult		=     4000.00;							// 295.00+50.00;
+	var pris_stjerne_young		=     2000.00;	var pris_stjerne_child = pris_stjerne_young;	// 195.00+50.00;
+	var pris_stjerne_smallchild	=     1000.00;							//   0.00;
+	///////////////////////////////////////////////////////////
+</script>
+
 <style>
 body,h1,h2,h3,h4,h5 {font-family: "Poppins", sans-serif}
 body {font-size:16px;}
@@ -18,28 +36,27 @@ body {font-size:16px;}
 #map:-moz-full-screen { width: 100% !important; height: 100% !important; z-index: 99999; }
 #map:full-screen { width: 100% !important; height: 100% !important; z-index: 99999; }
 .leaflet-pseudo-fullscreen { position: fixed !important; width: 100% !important; height: 100% !important; top: 0px !important; left: 0px !important; z-index: 99999; }
-.de { display:none; }
-#.en { display:none; }
+#.de { display:none; }
+.en { display:none; }
 .da { display:none; }
 .pending { background:yellow; }
+.xpris:after	{ content:" DKK"; }
+.lugcamp:after	{ content:"(.de)"; font-size:66%; }
 </style>
 <script src="jquery.min.js"></script>
 <body>
-
 <!-- Sidebar/menu -->
 <nav class="w3-sidebar w3-red w3-collapse w3-top w3-large w3-padding" style="z-index:3;width:300px;font-weight:bold;" id="mySidebar"><br>
   <a href="javascript:void(0)" onclick="w3_close()" class="w3-button w3-hide-large w3-display-topleft" style="width:100%;font-size:22px">Close Menu</a>
+  <div>Cart: <span class="pris" id="cart_value"></span></div>
   <div class="w3-container">
-    <h3 class="w3-padding-64"><b>LugCamp<br/>2019</b></h3>
+    <h3 class="w3-padding-64"><b><span class="lugcamp">LugCamp</span><br/>2019</b></h3>
   </div>
   <div class="w3-bar-block">
-    <div class="w3-bar-item w3-button">
-      <a href="#" onclick="switch_to('da'); return false;"><img src="da.png" /></a>
-      <a href="#" onclick="switch_to('de'); return false;"><img src="de.png" /></a>
-      <a href="#" onclick="switch_to('en'); return false;"><img src="en.png" /></a>
-    </div>
     <a href="#" onclick="w3_close()" class="w3-bar-item w3-button">
-	<span class="da en de">Home</span>
+	<span class="da">Top</span>
+	<span class="en">Top</span>
+	<span class="de">Top</span>
     </a> 
     <a href="#plans" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">
 	<span class="da">Planer</span>
@@ -52,9 +69,9 @@ body {font-size:16px;}
 	<span class="de">Bilder</span>
     </a> 
     <a href="#external" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">
-	<span class="da">External tours</span>
-	<span class="en">External tours</span>
-	<span class="de">External tours</span>
+	<span class="da">Udflugter</span>
+	<span class="en">Excursions</span>
+	<span class="de">Ausflüge</span>
     </a> 
     <a href="#pricing" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">
 	<span class="da">Priser og registrering</span>
@@ -72,7 +89,7 @@ body {font-size:16px;}
 <!-- Top menu on small screens -->
 <header class="w3-container w3-top w3-hide-large w3-red w3-xlarge w3-padding">
   <a href="javascript:void(0)" class="w3-button w3-red w3-margin-right" onclick="w3_open()">☰</a>
-  <span>LugCamp 2019</span>
+  <span><span class="lugcamp">LugCamp</span> 2019</span>
 </header>
 
 <!-- Overlay effect when opening sidebar on small screens -->
@@ -81,21 +98,34 @@ body {font-size:16px;}
 <!-- !PAGE CONTENT! -->
 <div class="w3-main" style="margin-left:340px;margin-right:40px">
 
+  <div style="float:right;">
+    <a href="#" onclick="switch_to('da'); return false;"><img src="da.png" /></a>
+    <a href="#" onclick="switch_to('de'); return false;"><img src="de.png" /></a>
+    <a href="#" onclick="switch_to('en'); return false;"><img src="en.png" /></a>
+  </div>
+
   <!-- Header -->
   <div class="w3-container" style="margin-top:80px">
-    <h1 class="w3-jumbo"><b>LugCamp 2019</b></h1>
+    <h1 class="w3-jumbo"><b><span class="lugcamp">LugCamp</span> 2019</b></h1>
+
     <h1 class="da">Torsdag 30. maj - søndag 2. juni</h1>
     <h1 class="en">Thurday 30. may - sunday 2. june</h1>
     <h1 class="de">Donnerstag 30. Mai - Sontag 2. Juni</h1>
+
     <h2 class="da">(Kr. Himmelfart + weekend)</h2>
     <h2 class="en">(Ascension Day + weekend)</h2>
     <h2 class="de">(Himmelfahrt + Wochenende)</h2>
-    <p class="da">Velkommen tilLugCamp.de 2019 i Danmark, afholdt af AlsLUG i Ullerup
-			udenfor Sønderborg.</p>
-    <p class="en">Welcome to LugCamp.de 2019 in Denmark, hosted by AlsLUG located in Ullerup
-			outside Sønderborg, approx. 30km from the German border.</p>
-    <p class="de">Willkommen bei LugCamp.de 2019 in Dänemark, veranstaltet von AlsLUG in Ullerup
-			außerhalb von Sønderborg, 30 km von der deutschen Grenze entfernt.</p>
+
+    <p class="da">Velkommen til <span class="lugcamp">LugCamp</span> 2019 i Danmark,
+			afholdt af <a target='_blank' href='https://www.alslug.dk'>AlsLUG</a>
+			i Ullerup udenfor Sønderborg.</p>
+    <p class="en">Welcome to <span class="lugcamp">LugCamp</span> 2019 in Denmark,
+			hosted by <a target='_blank' href='https://www.alslug.dk'>AlsLUG</a>
+			located in Ullerup outside Sønderborg, approx. 30km from the German border.</p>
+    <p class="de">Willkommen bei <span class="lugcamp">LugCamp</span> 2019 in Dänemark,
+			veranstaltet von <a target='_blank' href='https://www.alslug.dk'>AlsLUG</a>
+			in Ullerup außerhalb von Sønderborg, 30 km von der deutschen Grenze entfernt.</p>
+
   </div>
 
   <!-- Plans -->
@@ -116,9 +146,9 @@ body {font-size:16px;}
       <li class="en">LAN-area.</li>
       <li class="de">LAN-Bereich.</li>
 
-      <li class="da">Mødelokale for foredrag etc in AlsLUGs lokaler.</li>
-      <li class="en">Meeting-room for presentations etc in the space of AlsLUG.</li>
-      <li class="de">Besprechungsraum für Präsentationen usw. im Raum der AlsLUG.</li>
+      <li class="da">Mødelokale for foredrag etc in <a target='_blank' href='https://www.alslug.dk'>AlsLUG</a>s lokaler.</li>
+      <li class="en">Meeting-room for presentations etc in the space of <a target='_blank' href='https://www.alslug.dk'>AlsLUG</a>.</li>
+      <li class="de">Besprechungsraum für Präsentationen usw. im Raum der <a target='_blank' href='https://www.alslug.dk'>AlsLUG</a>.</li>
 
       <li class="da">Mulighed for overnatning i det gamle bibliotek.</li>
       <li class="en">Possibility of accommodation in the old library.</li>
@@ -147,24 +177,29 @@ body {font-size:16px;}
       <li class="de">Camping für Wohnwagen und Wohmmobile im Hof.</li>
 
       <li>
-		<div class="da">Forskellige foredrag. Har du noget du vil fortælle om?
+        <div class="da">Forskellige foredrag. Har du noget du vil fortælle om?
 					Så send en mail til</div>
-		<div class="en">Various presentations. Do you have a topic you want to tell us about?
+        <div class="en">Various presentations. Do you have a topic you want to tell us about?
 					Please send a mail to</div>
-		<div class="da">Verschiedene Präsentationen. Haben Sie ein Thema, über das Sie
+        <div class="da">Verschiedene Präsentationen. Haben Sie ein Thema, über das Sie
 					uns erzählen möchten? Bitte senden Sie eine Mail an</div>
-		<a href="mailto:lugcamp-info@alslug.dk">lugcamp-info@alslug.dk</a>
-		<div class="da">med detaljer, så vi kan lave en liste her på siden.</div>
-		<div class="en">with details, so we can publish a list here on the site.</div>
-		<div class="de">mit Details, damit wir eine Liste hier auf der Site veröffentlichen können.</div>
+
+        <a href="mailto:lugcamp-info@alslug.dk">lugcamp-info@alslug.dk</a>
+
+        <div class="da">med detaljer, så vi kan lave en liste her på siden.</div>
+        <div class="en">with details, so we can publish a list here on the site.</div>
+        <div class="de">mit Details, damit wir eine Liste hier auf der Site veröffentlichen können.</div>
       </li>
+
       <li class="da">Et par udflugter ud i området.</li>
       <li class="en">A few excursions out in the area.</li>
       <li class="de">Ein paar Ausflüge in die Umgebung.</li>
     </ul>
+
     <p class="da">Vi håber at se dig i Ullerup.</p>
     <p class="en">We hope to see you in Ullerup.</p>
     <p class="de">Wir hoffen, Sie in Ullerup zu sehen.</p>
+
     <p>
       <div class="en" style="background:red;">Please remeber to bring your passport or other valid travel-id.</div>
       <div class="en" style="background:red;">There is border-control when you cross the border into Denmark.</div>
@@ -179,15 +214,22 @@ body {font-size:16px;}
       <div id='openstreetmap' style='width:100%; height:400px; float:right;'>
         <div id='interlude'
                    style='text-align: center; line-height: 300px; font-weight: bold; border: 1px dotted grey; background-color: #eee;'>
-          Map currently unavailable.
+		Map currently unavailable.
         </div>
       </div>
       </div>
   </div>
   <div class="w3-row-padding">
-    <div><b>	Bakkensbro Aktivitets- og Kulturcenter	    </b></div>
-    <div>	Bakkensbro 6, Ullerup			    </div>
-    <div>	DK - 6400 Sønderborg			    </div>
+    <p>
+      <div class="da">	Lejrenes adresse er:				</div>
+      <div class="en">	The adress of the camp is:			</div>
+      <div class="de">	Die Adresse der camp lautet:			</div>
+    </p>
+    <div><b>		Bakkensbro Aktivitets- og Kulturcenter		</b></div>
+    <div>		Bakkensbro 6, Ullerup				</div>
+    <div>		DK - 6400 Sønderborg				</div>
+
+    <p>			GPS-position: 54.96369 N 9.65506 Ø		</p>
   </div>
 <!-- leaflet -->
 <script			src='https://kartoteket.alslug.dk/proxy.php/leaflet/leaflet.js'		></script>
@@ -202,8 +244,8 @@ body {font-size:16px;}
 	<span class="de">Bilder</span>
     </b></h1>
     <hr style="width:50px;border:5px solid red" class="w3-round">
-    <p>
-      I'll post some images of the site shortly.
+    <p class="missing">
+		I'll post some images of the site shortly.
     </p>
   </div>
 <!--
@@ -233,11 +275,19 @@ body {font-size:16px;}
 
   <!-- External -->
   <div class="w3-container" id="external" style="margin-top:75px">
-    <h1 class="w3-xxxlarge w3-text-red"><b>External tours.</b></h1>
+    <h1 class="w3-xxxlarge w3-text-red"><b>
+	<span class="da">Udflugter</span>
+	<span class="en">Excursions</span>
+	<span class="de">Ausflüge</span>
+    </b></h1>
     <hr style="width:50px;border:5px solid red" class="w3-round">
-    <p>We'll also be looking on things around the site.
+    <p class="missing">We'll also be looking on things around the site.
 		We hope to be able to arrange tours to these atractions.</p>
-    <p>Pricing for the tours will be published shortly.</p>
+    <p class="missing">We've arranged a guided tour in Sønderborg Slot. If you plan on visiting all three attractions,
+		we can offer a common ticket for all three with a discount for
+		<span class="pris_stjerne_adult"></span> for adults and
+		<span class="pris_stjerne_child"></span> for children.</p>
+    <p class="missing">Ticket <b>must</b> be bought thru our registration-form below.</p>
   </div>
 
   <!-- The Team -->
@@ -248,13 +298,39 @@ body {font-size:16px;}
         <div class="w3-container">
           <h3>Sønderborg Slot</h3>
           <p class="w3-opacity">Museum</p>
-          <p><a target='_blank' href='https://msj.dk/en/soenderborg-castle/'>
-		<span class="da"></span>
-		<span class="en">At Sønderborg Castle you will be told the tale of the dukes,
-		the (Schleswig) wars and the Reunification in 1920.</span>
-		<span class="de"></span>
+          <p>
+            <div class="da">Fælles rundtur med guide:</div>
+            <div class="en">Joint guided tour:</div>
+            <div class="de">Gemeinsame Führung:</div>
+            <div>
+              <span class="da">Voksne    </span>
+              <span class="en">Adults    </span>
+              <span class="de">Erwachsene</span> : <span class="pris_slottet_adult"></span>
+            </div>
+            <div>
+              <span class="da">Børn      </span>
+              <span class="en">Children  </span>
+              <span class="de">Kinder    </span> : <span class="pris_slottet_child"></span>
+            </div>
+          </p>
+          <p class="da"><a target='_blank' href='https://msj.dk/soenderborg-slot/'>
+		På Sønderborg Slot får du fortællingen om hertugerne,
+		krigene og Genforeningen i 1920.
           </a></p>
-          <p class="da"></p>
+          <p class="en"><a target='_blank' href='https://msj.dk/en/soenderborg-castle/'>
+		At Sønderborg Castle you will be told the tale of the dukes,
+		the (Schleswig) wars and the Reunification in 1920.
+          </a></p>
+          <p class="de"><a target='_blank' href='https://msj.dk/de/schloss-sonderburg/'>
+		Im Schloss Sonderburg erfahren Sie die Geschichte von den Herzögen,
+		Kriegen und der Wiedervereinigung 1920.
+          </a></p>
+          <p class="da"><!-- Sønderborg Slot er med sin storslåede beliggenhed ved indsejlingen til
+		Sønderborg et nationalt dansk ikon. -->Slottet rummer næsten 800 års dramatisk
+		historie om Sønderjylland og Slesvig. De mange rum byder på moderne udstillinger
+		om Sønderjyllands og grænselandets omskiftelige historie, den danske kong Chr. II’s
+		fangenskab på slottet, det danske nederlag i 1864 og de mange danskes deltagelse
+		i 1. Verdenskrig på tysk side inden Genforeningen i 1920.</p>
           <p class="en"><!-- Sønderborg Castle, in its magnificent setting close to the seaward approach
 		to Sønderborg, is a Danish national icon. -->The castle holds almost 800 years
 		of Southern Jutland and Schleswig’s dramatic history. The many rooms show
@@ -263,7 +339,13 @@ body {font-size:16px;}
 		the Danish defeat in 1864 and the many Danes participating in World War I
 		on the German side prior to the Reunification in 1920.</p>
 		<!-- 80/person + 450(fredag)/900(torsdag/lørdag) for rundvisning -->
-          <p class="de"></p>
+          <p class="de"><!-- Das Schloss Sonderburg ist mit seiner großartigen Lage an der Einfahrt
+		nach Sonderburg eine dänische Nationalikone. -->Das Schloss umfasst knapp 800 Jahre
+		der dramatischen Geschichte von Nordschleswig und Schleswig. Die vielen Räume enthalten
+		moderne Ausstellungen zu der wechselvollen Geschichte Nordschleswigs und des Grenzlands,
+		zur Gefangenschaft des dänischen Königs Christian II im Schloss, zur dänischen
+		Niederlage 1864 und der Teilnahme vieler Dänen am Ersten Weltkrieg auf deutscher
+		Seite, vor der Wiedervereinigung 1920.</p>
         </div>
       </div>
     </div>
@@ -273,16 +355,51 @@ body {font-size:16px;}
         <div class="w3-container">
           <h3>1864 / Dybbøl Banke</h3>
           <p class="w3-opacity">The war 1864</p>
-          <p><a target='_blank' href='https://1864.dk/the-war-1864/?lang=en'>
-            Why did we have the war and what happened?
-            We give you a short introduction to the war 1864.
+          <p>
+            <div class="da">Individuelt besøg:</div>
+            <div class="en">Individual visit:</div>
+            <div class="de">Einzelbesuch:</div>
+            <div>
+              <span class="da">Voksne    </span>
+              <span class="en">Adults    </span>
+              <span class="de">Erwachsene</span> : <span class="xpris">120.00</span>
+            </div>
+            <div>
+              <span class="da">Børn      </span>
+              <span class="en">Children  </span>
+              <span class="de">Kinder    </span> : <span class="xpris"> 70.00</span>
+            </div>
+          </p>
+
+          <p class="da"><a target='_blank' href='https://1864.dk/krigen-1864/'>
+		Hvordan var det lige, det hele startede? Og hvad skete der?
+		Vi giver en kort introduktion til Krigen 1864.
           </a></p>
-          <p>The story about 1864 deals with an armed conflict between
-            European Great Powers and a smaller state.
-            The conflict originated in a disagreement about finding a solution
-            for the national belonging but it was also concerned with the constitutional,
-            social and human costs of the war.</p>
-		<!-- 120/person -->
+          <p class="en"><a target='_blank' href='https://1864.dk/the-war-1864/?lang=en'>
+		Why did we have the war and what happened?
+		We give you a short introduction to the war 1864.
+          </a></p>
+          <p class="de"><a target='_blank' href='https://1864.dk/the-war-1864/?lang=en'>
+		Wie hat alles angefangen? Und was ist passiert?
+		Wir geben eine kurze Einführung in den Krieg 1864.
+          </a></p>
+
+          <p class="da">Fortællingen om 1864 er historien om en væbnet konflikt mellem
+		europæiske stormagter og en mindre stat udsprunget af uenighed om,
+		hvorledes et spørgsmål om nationale tilhørsforhold skulle løses og om,
+		hvilke statsretslige, samfundsmæssige og menneskelige omkostninger
+		udfaldet af denne konflikt fik.</p>
+          <p class="en">The story about 1864 deals with an armed conflict between
+		European Great Powers and a smaller state.
+		The conflict originated in a disagreement about finding a solution
+		for the national belonging but it was also concerned with the constitutional,
+		social and human costs of the war.</p>
+          <p class="de">Die Geschichte von 1864 ist die Geschichte eines bewaffneten Konflikts zwischen
+		Europäische Mächte und ein kleinerer Staat aus Meinungsverschiedenheiten
+		wie eine Frage der nationalen Zugehörigkeit gelöst werden sollte und ob
+		Das sind öffentliche, soziale und menschliche Kosten
+		das Ergebnis dieses Konflikts wurde erhalten.</p>
+
         </div>
       </div>
     </div>
@@ -292,15 +409,47 @@ body {font-size:16px;}
         <div class="w3-container">
           <h3>Universe</h3>
           <p class="w3-opacity">Science Park</p>
-          <p><a target='_blank' href='https://universe.dk/en'>
-            The adventure park, where fun is a science</a></p>
-          <p>Our aim at Danfoss Universe is to share our passion for science,
-            technology and innovation with children and young people.
-            So we have filled the park with a wealth of fabulous experiences and attractions.
-            On your visit you can try lifting a car, build your own water rocket or
-            roam around a virtual world.
-            There are a host of awesome activities waiting to be explored.</p>
-		<!-- 195/person -->
+          <p>
+            <div class="da">Individuelt besøg:</div>
+            <div class="en">Individual visit:</div>
+            <div class="de">Einzelbesuch:</div>
+            <div>
+              <span class="da">Voksne    </span>
+              <span class="en">Adults    </span>
+              <span class="de">Erwachsene</span> : <span class="xpris"><small>195.00/</small>245.00</span>
+            </div>
+            <div>
+              <span class="da">Børn      </span>
+              <span class="en">Children  </span>
+              <span class="de">Kinder    </span> : <span class="xpris"><small>165.00/</small>195.00</span>
+            </div>
+          </p>
+
+          <p class="da"><a target='_blank' href='https://universe.dk/en'>
+		Oplevelsesparken, hvor sjov er en videnskab</a></p>
+          <p class="en"><a target='_blank' href='https://universe.dk/en'>
+		The adventure park, where fun is a science</a></p>
+          <p class="de"><a target='_blank' href='https://universe.dk/en'>
+ 		Der Erlebnispark, in dem Wissenschaft Spaß macht</a></p>
+
+          <p class="da">I Universe vil vi gerne begejstre børn og unge for naturvidenskab,
+		teknologi og iværksætteri. Derfor har vi fyldt parken med en masse
+		fabelagtige oplevelser og attraktioner. Her kan I forsøge at løfte en bil,
+		bygge jeres egen vandraket, gå på opdagelse i den virtuelle verden eller
+		prøve nogle af vores mange andre fede aktiviteter.</p>
+          <p class="en">Our aim at Danfoss Universe is to share our passion for science,
+		technology and innovation with children and young people.
+		So we have filled the park with a wealth of fabulous experiences and attractions.
+		On your visit you can try lifting a car, build your own water rocket or
+		roam around a virtual world.
+		There are a host of awesome activities waiting to be explored.</p>
+          <p class="de">Universe will Kinder und Jugendliche für die Naturwissenschaften,
+		Technik und Unternehmertum begeistern – und genau das ist auch der Grund,
+		weshalb es im Park so viele außergewöhnliche Erlebnisangebote und
+		Attraktionen zu entdecken gibt. Hier könnt ihr versuchen, ein Auto anzuheben
+		oder eine eigene Wasserrakete zu bauen, in der virtuellen Welt auf
+		Entdeckungsreise gehen oder andere der zahlreichen coolen Aktivitäten ausprobieren.</p>
+
         </div>
       </div>
     </div>
@@ -314,50 +463,96 @@ body {font-size:16px;}
 	<span class="de">Preise und Anmeldung</span>
     </b></h1>
     <hr style="width:50px;border:5px solid red" class="w3-round">
-    <p>Prices and registration will come online shortly.
+    <p class="missing">Prices and registration will come online shortly.
 		</p>
+    <p class="w3-xlarge missing">Right now a test in online. Please do not submit registrations yet.
+		</p>
+    <form action="/action_page.php" target="_blank">
+      <div class="w3-row-padding">
+        <!-- --------------------------------------------------------------------------- -->
+        <hr>
+        <div class="w3-half person" id="person_1"></div>
+        <!-- --------------------------------------------------------------------------- -->
+        <div class="w3-half">
+          <div class="w3-section">
+            <label class="da">Email <span title="Vi vil sende bekræftelse,
+og info om campen til denne mail-adresse.
+Du vil ikke høre fra os efter lejren.">&#128712;</span></label>
+            <label class="en">Email <span title="We'll send confirmation,
+and info about the camp to this mail.
+After the camp you will not hear from us again.">&#128712;</span></label>
+            <label class="de">Email <span title="Wir senden eine Bestätigung,
+und Infos zum Lager zu dieser Mail.
+Nach dem Camp werden Sie nicht mehr von uns hören.">&#128712;</span></label>
+            <input class="w3-input w3-border" type="text" name="Email" required />
+          </div>
+          <div class="w3-section">
+            <label class="da">Mobil-nummer <span title="Vi vil sende bekræftelse,
+og info om campen via SMS til dette nummer.
+Du vil ikke høre fra os efter lejren.">&#128712;</span></label>
+            <label class="da">Mobile-number <span title="We'll send confirmation,
+and info about the camp via SMS to this number.
+After the camp you will not hear from us again.">&#128712;</span></label>
+            <label class="da">Handy-nummer <span title="Wir senden eine Bestätigung,
+und Infos zum Lager via SMS zu dieser Nummer.
+Nach dem Camp werden Sie nicht mehr von uns hören.">&#128712;</span></label>
+            <input class="w3-input w3-border" type="text" name="Mobile" />
+          </div>
+          <div class="w3-section">
+            <label class="da">Hvilken LUG kommer du fra?</label>
+            <label class="en">Witch LUG do you come from?</label>
+            <label class="de">Von welchem LUG kommst du?</label>
+            <input class="w3-input w3-border" type="text" name="Lug" />
+          </div>
+          <div class="w3-section">
+            <label class="da">I hvilken by og land bor du?</label>
+            <label class="en">In witch city and country do you live?</label>
+            <label class="de">In welcher Stadt und Land lebst du?</label>
+            <input class="w3-input w3-border" type="text" name="Home" />
+          </div>
+        </div>
+        <!-- --------------------------------------------------------------------------- -->
+        <div class="w3-bar-block" id="open_2_3">
+          <div onclick="display_2_3(); return false" class="w3-bar-item w3-button w3-red w3-hover-white" style="text-align:center">
+            <span class="da">Hele familen kommer med. Jeg skal tilmelde flere personer.</span>
+            <span class="en">The whole family comes along. I need to sign up more people.</span>
+            <span class="de">Die ganze Familie kommt mit. Ich muss mehr Leute anmelden.</span>
+          </div> 
+          <p/>
+        </div>
+      </div>
+      <div class="w3-row-padding" id="person_2_3" style="display:none;">
+        <div class="w3-half person" id="person_2"></div>
+        <div class="w3-half person" id="person_3"></div>
+        <div class="w3-bar-block" id="open_4_5">
+          <div onclick="display_4_5(); return false" class="w3-bar-item w3-button w3-red w3-hover-white" style="text-align:center">
+            <span class="da">Vi er en stor famile. Vi er endnu flere.</span>
+            <span class="en">We are a big family. We are even more.</span>
+            <span class="de">Wir sind eine große Familie. Wir sind noch mehr.</span>
+          </div> 
+          <p/>
+        </div>
+      </div>
+      <div class="w3-row-padding" id="person_4_5" style="display:none;">
+        <div class="w3-half person" id="person_4"></div>
+        <div class="w3-half person" id="person_5"></div>
+        <div class="w3-bar-block" id="open_6_7">
+          <div onclick="display_6_7(); return false" class="w3-bar-item w3-button w3-red w3-hover-white" style="text-align:center">
+            <span class="da">Vi er en stor famile. Vi er endnu flere.</span>
+            <span class="en">We are a big family. We are even more.</span>
+            <span class="de">Wir sind eine große Familie. Wir sind noch mehr.</span>
+          </div> 
+          <p/>
+        </div>
+      </div>
+      <div class="w3-row-padding" id="person_6_7" style="display:none;">
+        <div class="w3-half person" id="person_6"></div>
+        <div class="w3-half person" id="person_7"></div>
+      </div>
+      <button type="submit" class="w3-button w3-block w3-padding-large w3-red w3-margin-bottom">Send registration</button>
+    </form>  
   </div>
 
-<!--
-  <div class="w3-row-padding">
-    <div class="w3-half w3-margin-bottom">
-      <ul class="w3-ul w3-light-grey w3-center">
-        <li class="w3-dark-grey w3-xlarge w3-padding-32">Basic</li>
-        <li class="w3-padding-16">Floorplanning</li>
-        <li class="w3-padding-16">10 hours support</li>
-        <li class="w3-padding-16">Photography</li>
-        <li class="w3-padding-16">20% furniture discount</li>
-        <li class="w3-padding-16">Good deals</li>
-        <li class="w3-padding-16">
-          <h2>$ 199</h2>
-          <span class="w3-opacity">per room</span>
-        </li>
-        <li class="w3-light-grey w3-padding-24">
-          <button class="w3-button w3-white w3-padding-large w3-hover-black">Sign Up</button>
-        </li>
-      </ul>
-    </div>
-        
-    <div class="w3-half">
-      <ul class="w3-ul w3-light-grey w3-center">
-        <li class="w3-red w3-xlarge w3-padding-32">Pro</li>
-        <li class="w3-padding-16">Floorplanning</li>
-        <li class="w3-padding-16">50 hours support</li>
-        <li class="w3-padding-16">Photography</li>
-        <li class="w3-padding-16">50% furniture discount</li>
-        <li class="w3-padding-16">GREAT deals</li>
-        <li class="w3-padding-16">
-          <h2>$ 249</h2>
-          <span class="w3-opacity">per room</span>
-        </li>
-        <li class="w3-light-grey w3-padding-24">
-          <button class="w3-button w3-red w3-padding-large w3-hover-black">Sign Up</button>
-        </li>
-      </ul>
-    </div>
-  </div>
--->
-  
   <!-- Contact -->
   <div class="w3-container" id="contact" style="margin-top:75px">
     <h1 class="w3-xxxlarge w3-text-red"><b>
@@ -366,26 +561,20 @@ body {font-size:16px;}
 	<span class="de">Kontaktieren Sie uns</span>
     </b></h1>
     <hr style="width:50px;border:5px solid red" class="w3-round">
-    <p>Do you have any questions regarding the camp, please send a mail til 
-		<a href="mailto:lugcamp-info@alslug.dk">lugcamp-info@alslug.dk</a>.
-		English, german and danish will be fine, but expect to get the answer in english</p>
-<!--
-    <form action="/action_page.php" target="_blank">
-      <div class="w3-section">
-        <label>Name</label>
-        <input class="w3-input w3-border" type="text" name="Name" required>
+    <p>
+      <div>
+       	<span class="da">Har du spørgsmål vedrørende campen, så send en mail til</span>
+        <span class="en">Do you have any questions regarding the camp, please send a mail to</span>
+        <span class="de">Haben Sie Fragen zum Camp, senden Sie bitte eine Mail an</span>
+        <a href="mailto:lugcamp-info@alslug.dk">lugcamp-info@alslug.dk</a>.
       </div>
-      <div class="w3-section">
-        <label>Email</label>
-        <input class="w3-input w3-border" type="text" name="Email" required>
-      </div>
-      <div class="w3-section">
-        <label>Message</label>
-        <input class="w3-input w3-border" type="text" name="Message" required>
-      </div>
-      <button type="submit" class="w3-button w3-block w3-padding-large w3-red w3-margin-bottom">Send Message</button>
-    </form>  
--->
+      <div class="da">Skriv på engelsk, tysk eller dansk,
+							men forvent at få svar på dansk eller engelsk.</div>
+      <div class="en">Please write in english, german and danish will be fine,
+							but expect to get the answer in danish or english.</div>
+      <div class="de">Bitte schreiben Sie auf Englisch, Deutsch oder Dänisch,
+							erwarten Sie jedoch Antworten auf Dänisch oder Englisch.</div>
+    </p>
   </div>
 
 <!-- End page content -->
@@ -428,7 +617,181 @@ function switch_to(lang) {
   $(".de").hide();
   $("."+lang).show();
 }
+
+function name_change(obj) {
+	if (obj.id.substring(9) == "name") {
+		var nr = obj.id.substr(7,1)*1;
+		var disabled = "";	if (obj.value == "")	disabled = "disabled";
+		if (nr < 5) document.getElementById("person_"+(nr+1)+"_name").disabled = disabled;
+	}
+	if (obj.value == "") {
+		var x;
+		x = document.getElementsByClassName(obj.id.replace("_name","_enabled"));	for (i = 0; i < x.length; i++) {
+			x[i].disabled="disabled";
+			x[i].style.color="silver";
+			slottet = document.getElementById(id.replace("_name","_slottet"));
+			slottet.checked=false;
+			click_slot(slottet,false);
+		}
+	} else {
+		var x;
+		x = document.getElementsByClassName(obj.id.replace("_name","_enabled"));	for (i = 0; i < x.length; i++) {
+			x[i].disabled="";
+			x[i].style.color="black";
+		}
+	}
+	recalc();
+}
+
+function display_2_3() {
+	document.getElementById("person_2_3").style.display = "block";
+	document.getElementById("open_2_3").style.display = "none";
+}
+
+function display_4_5() {
+	document.getElementById("person_4_5").style.display = "block";
+	document.getElementById("open_4_5").style.display = "none";
+}
+
+function display_6_7() {
+	document.getElementById("person_6_7").style.display = "block";
+	document.getElementById("open_6_7").style.display = "none";
+}
+
+function update_prices(obj) {
+	var id = obj.id.substr(0,8);
+	var type = obj.id.substr(9);
+	if (type == "adult")		{ slottet = pris_slottet_adult;		stjerne = pris_stjerne_adult;		}
+	if (type == "young")		{ slottet = pris_slottet_young;		stjerne = pris_stjerne_young;		}
+	if (type == "child")		{ slottet = pris_slottet_child;		stjerne = pris_stjerne_child;		}
+	if (type == "smallchild")	{ slottet = pris_slottet_smallchild;	stjerne = pris_stjerne_smallchild;	}
+	document.getElementById(id+"_slottet_pris").innerHTML = slottet;
+	document.getElementById(id+"_stjerne_pris").innerHTML = stjerne;
+//	alert(obj.id);
+	recalc();
+}
+
+function recalc() {
+	var x;
+	var sum = 0;
+	x = document.getElementsByClassName("recalc");	for (i = 0; i < x.length; i++) {
+		var id = x[i].id.substr(0,8)
+		var name = id+"_name";
+		name = document.getElementById(name);
+		if (name.value == "")				{								} else 
+		if (x[i].id.substr(9) == "adult")		{ if (x[i].checked)	{ sum += pris_camp_adult;	}	} else
+		if (x[i].id.substr(9) == "young")		{ if (x[i].checked)	{ sum += pris_camp_young;	}	} else
+		if (x[i].id.substr(9) == "child")		{ if (x[i].checked)	{ sum += pris_camp_child;	}	} else
+		if (x[i].id.substr(9) == "smallchild")		{ if (x[i].checked)	{ sum += pris_camp_smallchild;	}	} else
+		if (x[i].id.substr(9) == "slottet")		{ if (x[i].checked)	{ sum += pris_slottet_adult;	}	} else
+		if (x[i].id.substr(9) == "stjernebillet")	{ if (x[i].checked)	{ sum += pris_stjerne_child;	}	} else
+		if (x[i].id.substr(9) == "kiosk")		{ if (x[i].value)	{ sum += x[i].value*1;		}	} else
+											{ alert(x[i].id);		}
+	//	x[i].disabled="";
+	//	x[i].style.color="black";
+	}
+	document.getElementById("cart_value").innerHTML = sum;
+}
+
+function click_slot(slot,do_recalc) {
+	id = slot.id;
+	//alert(id);
+	var billet = document.getElementById(id.replace("_slottet","_stjernebillet"));
+	var text = document.getElementById(id.replace("_slottet","_stjerne_text"));
+	if (slot.checked) {	billet.disabled = "";					text.style.color = "black";	}
+			else {	billet.disabled = "disabled";	billet.checked = false;	text.style.color = "silver";	}
+	if (do_recalc) recalc();
+}
+
+function get_camp_type(id,type,text) {
+	var selected = "";
+	if (type == "adult") selected = "checked";
+	return "<div><input disabled class='w3-radio w3-border recalc "+id+"_enabled'"+
+						" type='radio'"+
+						" name='"+id+"_type'"+
+						" id='"+id+"_"+type+"'"+
+						"  value='"+type+"'"+
+						" onchange='update_prices(this);' "+selected+">"+
+					"<span>"+text+"	(<span class='pris_camp_"+type+"'></span>)</div>";
+}
+
+var i;
+var x;
+x = document.getElementsByClassName("person");		for (i = 0; i < x.length; i++) {
+	var id = x[i].id;
+	var nr = id.substring(7);
+	var bar;
+	var required;
+	var label_shaded;
+	var name_disabled;
+	if (nr == 1) { name_disabled = "";		bar = "";	required = " required";	name = "Name:";				}
+		else { name_disabled = "disabled";	bar = "<hr/>";	required = "";		name = "Name of family-nember #"+nr;	}
+
+	var extra_ticket_types = "";
+	if (nr > 0) extra_ticket_types = 
+		get_camp_type(id,"young",	"Young (12-17 years)"		)+
+		get_camp_type(id,"child",	"Child (4-11 years)"		)+
+		get_camp_type(id,"smallchild",	"Small child (0-3 years)"	);
+	x[i].innerHTML = bar+
+          "<div class='w3-section'>"+
+            "<label>"+name+"</label>"+
+            "<input class='w3-input w3-border' "+name_disabled+" type='text' id='"+id+"_name'"+required+" oninput='name_change(this);'>"+
+          "</div>"+
+          "<div class='w3-section "+id+"_enabled' style='color:silver;'>"+
+            "<label>Partisipant-type</label>"+
+		get_camp_type(id,"adult",	"Adult (18+)"			)+
+		extra_ticket_types+
+          "</div>"+
+          "<div class='w3-section "+id+"_enabled' style='color:silver;'>"+
+            "<label>Nickname:</label>"+
+            "<input class='w3-input w3-border' "+name_disabled+" type='text' id='"+id+"_nickame'>"+
+          "</div>"+
+          "<div class='w3-section "+id+"_enabled' style='color:silver;'>"+
+            "<label>Excursions:</label>"+
+            "<div class='"+id+"_enabled'>"+
+               "<input disabled class='w3-checkbox w3-border recalc "+id+"_enabled' type='checkbox' id='"+id+"_slottet' onClick='click_slot(this,true);' >"+
+				" <span class='slottet_text'>Join the excursion to Sønderborg Castle"+
+				" (+<span id='"+id+"_slottet_pris' class='pris_slottet_adult'></span>)"+
+													"</span>"+
+            "</div>"+
+            "<input disabled class='w3-checkbox w3-border recalc' type='checkbox' id='"+id+"_stjernebillet' onchange='recalc();'>"+
+				" <span class='stjerne_text' id='"+id+"_stjerne_text'>"+
+								"Upgrade ticket to include Dybbøl Banke and Universe"+
+														" (+"+
+					"<span id='"+id+"_stjerne_pris' class='stjerne_text pris_stjerne_adult'></span>"+
+															")</span>"+
+
+          "</div>"+
+          "<div class='w3-section "+id+"_enabled' style='color:silver;'>"+
+            "<label>Amount in DKK to preload on kiosk-account:</label>"+
+            "<input disabled class='w3-input w3-border recalc "+id+"_enabled' type='text' id='"+id+"_kiosk' oninput='recalc();'>"+
+          "</div>"+
+"";
+}
+
+///////////////////////////////////////////////////////////////////////////////
+//
+//	Udfylding af diverse priser
+//
+function set_pris(el,pris) {
+	el.innerHTML = pris;
+	el.insertAdjacentHTML("afterend"," DKK");
+}
+
+x = document.getElementsByClassName("pris_camp_adult");		for (i = 0; i < x.length; i++) { set_pris(x[i],pris_camp_adult		); }
+x = document.getElementsByClassName("pris_camp_young");		for (i = 0; i < x.length; i++) { set_pris(x[i],pris_camp_young		); }
+x = document.getElementsByClassName("pris_camp_child");		for (i = 0; i < x.length; i++) { set_pris(x[i],pris_camp_child		); }
+x = document.getElementsByClassName("pris_camp_smallchild");	for (i = 0; i < x.length; i++) { set_pris(x[i],pris_camp_smallchild	); }
+x = document.getElementsByClassName("pris_slottet_adult");	for (i = 0; i < x.length; i++) { set_pris(x[i],pris_slottet_adult	); }
+x = document.getElementsByClassName("pris_slottet_young");	for (i = 0; i < x.length; i++) { set_pris(x[i],pris_slottet_young	); }
+x = document.getElementsByClassName("pris_slottet_child");	for (i = 0; i < x.length; i++) { set_pris(x[i],pris_slottet_child	); }
+x = document.getElementsByClassName("pris_slottet_smallchild");	for (i = 0; i < x.length; i++) { set_pris(x[i],pris_slottet_smallchild	); }
+x = document.getElementsByClassName("pris_stjerne_adult");	for (i = 0; i < x.length; i++) { set_pris(x[i],pris_stjerne_adult	); }
+x = document.getElementsByClassName("pris_stjerne_young");	for (i = 0; i < x.length; i++) { set_pris(x[i],pris_stjerne_young	); }
+x = document.getElementsByClassName("pris_stjerne_child");	for (i = 0; i < x.length; i++) { set_pris(x[i],pris_stjerne_child	); }
+x = document.getElementsByClassName("pris_stjerne_smallchild");	for (i = 0; i < x.length; i++) { set_pris(x[i],pris_stjerne_smallchild	); }
 </script>
+
 
 </body>
 </html>
