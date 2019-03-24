@@ -40,7 +40,7 @@ body {font-size:16px;}
 .en { display:none; }
 .da { display:none; }
 .pending { background:yellow; }
-.xpris:after	{ content:" DKK"; }
+.cart_value:after,.xpris:after	{ content:" DKK"; }
 .lugcamp:after	{ content:"(.de)"; font-size:66%; }
 </style>
 <script src="jquery.min.js"></script>
@@ -48,7 +48,7 @@ body {font-size:16px;}
 <!-- Sidebar/menu -->
 <nav class="w3-sidebar w3-red w3-collapse w3-top w3-large w3-padding" style="z-index:3;width:300px;font-weight:bold;" id="mySidebar"><br>
   <a href="javascript:void(0)" onclick="w3_close()" class="w3-button w3-hide-large w3-display-topleft" style="width:100%;font-size:22px">Close Menu</a>
-  <div>Cart: <span class="pris" id="cart_value"></span></div>
+  <div>Cart: <span class="cart_value"></span></div>
   <div class="w3-container">
     <h3 class="w3-padding-64"><b><span class="lugcamp">LugCamp</span><br/>2019</b></h3>
   </div>
@@ -467,7 +467,7 @@ body {font-size:16px;}
 		</p>
     <p class="w3-xlarge missing">Right now a test in online. Please do not submit registrations yet.
 		</p>
-    <form action="/action_page.php" target="_blank">
+    <form action="https://kartoteket.alslug.dk/lugcamp/registration.php" method="post">
       <div class="w3-row-padding">
         <!-- --------------------------------------------------------------------------- -->
         <hr>
@@ -490,10 +490,10 @@ Nach dem Camp werden Sie nicht mehr von uns hören.">&#128712;</span></label>
             <label class="da">Mobil-nummer <span title="Vi vil sende bekræftelse,
 og info om campen via SMS til dette nummer.
 Du vil ikke høre fra os efter lejren.">&#128712;</span></label>
-            <label class="da">Mobile-number <span title="We'll send confirmation,
+            <label class="en">Mobile-number <span title="We'll send confirmation,
 and info about the camp via SMS to this number.
 After the camp you will not hear from us again.">&#128712;</span></label>
-            <label class="da">Handy-nummer <span title="Wir senden eine Bestätigung,
+            <label class="de">Handy-nummer <span title="Wir senden eine Bestätigung,
 und Infos zum Lager via SMS zu dieser Nummer.
 Nach dem Camp werden Sie nicht mehr von uns hören.">&#128712;</span></label>
             <input class="w3-input w3-border" type="text" name="Mobile" />
@@ -510,6 +510,7 @@ Nach dem Camp werden Sie nicht mehr von uns hören.">&#128712;</span></label>
             <label class="de">In welcher Stadt und Land lebst du?</label>
             <input class="w3-input w3-border" type="text" name="Home" />
           </div>
+          <input class="w3-input w3-border cart_value" type="text" name="Sum" />
         </div>
         <!-- --------------------------------------------------------------------------- -->
         <div class="w3-bar-block" id="open_2_3">
@@ -549,7 +550,22 @@ Nach dem Camp werden Sie nicht mehr von uns hören.">&#128712;</span></label>
         <div class="w3-half person" id="person_6"></div>
         <div class="w3-half person" id="person_7"></div>
       </div>
-      <button type="submit" class="w3-button w3-block w3-padding-large w3-red w3-margin-bottom">Send registration</button>
+      <button type="submit" id="registration_submit" class="w3-button w3-block w3-padding-large w3-red w3-margin-bottom">
+				Send registration and pay <span class="cart_value"></span>
+				</button>
+<form action="your-server-side-code" method="POST">
+  <script
+    src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+    data-key="pk_test_xaFjcaiPopJpuTvDwW1W3E5X"
+    data-amount="999"
+    data-name="AlsLUG - Alssund Linux Brugergruppe"
+    data-description="LugCamp 2019"
+    data-image="https://www.alslug.dk/images/alslug-logo-modded.png"
+    data-locale="auto"
+    data-zip-code="true"
+    data-currency="dkk">
+  </script>
+</form>
     </form>  
   </div>
 
@@ -629,16 +645,19 @@ function name_change(obj) {
 		x = document.getElementsByClassName(obj.id.replace("_name","_enabled"));	for (i = 0; i < x.length; i++) {
 			x[i].disabled="disabled";
 			x[i].style.color="silver";
-			slottet = document.getElementById(id.replace("_name","_slottet"));
-			slottet.checked=false;
-			click_slot(slottet,false);
 		}
+		slottet = document.getElementById(obj.id.replace("_name","_slottet"));
+		slottet.checked=false;
+		click_slot(slottet,false);
+		document.getElementById("registration_submit").disabled="disabled";
 	} else {
 		var x;
 		x = document.getElementsByClassName(obj.id.replace("_name","_enabled"));	for (i = 0; i < x.length; i++) {
 			x[i].disabled="";
 			x[i].style.color="black";
 		}
+		click_slot(slottet,false);
+		document.getElementById("registration_submit").disabled="";
 	}
 	recalc();
 }
@@ -683,14 +702,19 @@ function recalc() {
 		if (x[i].id.substr(9) == "young")		{ if (x[i].checked)	{ sum += pris_camp_young;	}	} else
 		if (x[i].id.substr(9) == "child")		{ if (x[i].checked)	{ sum += pris_camp_child;	}	} else
 		if (x[i].id.substr(9) == "smallchild")		{ if (x[i].checked)	{ sum += pris_camp_smallchild;	}	} else
+
 		if (x[i].id.substr(9) == "slottet")		{ if (x[i].checked)	{ sum += pris_slottet_adult;	}	} else
-		if (x[i].id.substr(9) == "stjernebillet")	{ if (x[i].checked)	{ sum += pris_stjerne_child;	}	} else
+		if (x[i].id.substr(9) == "stjernebillet")	{ if (x[i].checked)	{ sum += pris_stjerne_adult;	}	} else
+
 		if (x[i].id.substr(9) == "kiosk")		{ if (x[i].value)	{ sum += x[i].value*1;		}	} else
 											{ alert(x[i].id);		}
 	//	x[i].disabled="";
 	//	x[i].style.color="black";
 	}
-	document.getElementById("cart_value").innerHTML = sum;
+	x = document.getElementsByClassName("cart_value");	for (i = 0; i < x.length; i++) {
+		x[i].value = sum;
+		x[i].innerHTML = sum;
+	}
 }
 
 function click_slot(slot,do_recalc) {
@@ -703,16 +727,21 @@ function click_slot(slot,do_recalc) {
 	if (do_recalc) recalc();
 }
 
-function get_camp_type(id,type,text) {
+function get_camp_type(id,type,da,en,de) {
 	var selected = "";
 	if (type == "adult") selected = "checked";
 	return "<div><input disabled class='w3-radio w3-border recalc "+id+"_enabled'"+
-						" type='radio'"+
-						" name='"+id+"_type'"+
-						" id='"+id+"_"+type+"'"+
-						"  value='"+type+"'"+
-						" onchange='update_prices(this);' "+selected+">"+
-					"<span>"+text+"	(<span class='pris_camp_"+type+"'></span>)</div>";
+							" type='radio'"+
+							" name='"+id+"[type]'"+
+							" id='"+id+"_"+type+"'"+
+							"  value='"+type+"'"+
+							" onchange='update_prices(this);' "+selected+
+							" >"+
+					"<span>"+
+//						"<span class='da'>"+da+"</span>"+
+////						"<span class='en'>"+en+"</span>"+
+						"<span class='de'>"+de+"</span>"+
+									" (<span class='pris_camp_"+type+"'></span>)</div>";
 }
 
 var i;
@@ -724,47 +753,78 @@ x = document.getElementsByClassName("person");		for (i = 0; i < x.length; i++) {
 	var required;
 	var label_shaded;
 	var name_disabled;
-	if (nr == 1) { name_disabled = "";		bar = "";	required = " required";	name = "Name:";				}
+	if (nr == 1) { name_disabled = "";		bar = "";	required = "required";	name = "Name:";				}
 		else { name_disabled = "disabled";	bar = "<hr/>";	required = "";		name = "Name of family-nember #"+nr;	}
 
 	var extra_ticket_types = "";
 	if (nr > 0) extra_ticket_types = 
-		get_camp_type(id,"young",	"Young (12-17 years)"		)+
-		get_camp_type(id,"child",	"Child (4-11 years)"		)+
-		get_camp_type(id,"smallchild",	"Small child (0-3 years)"	);
+		get_camp_type(id,"young",	"Ung (12-17 år)",	"Young (12-17 years)",		"Young (12-17 Jahre)"	)+
+		get_camp_type(id,"child",	"Barn (4-11 år)",	"Child (4-11 years)",		"Kind (4-11 Jahre)"	)+
+		get_camp_type(id,"smallchild",	"Small child (0-3 år)",	"Small child (0-3 years)",	"Kleinkind (0-3 Jahre)"	);
 	x[i].innerHTML = bar+
           "<div class='w3-section'>"+
             "<label>"+name+"</label>"+
-            "<input class='w3-input w3-border' "+name_disabled+" type='text' id='"+id+"_name'"+required+" oninput='name_change(this);'>"+
+            "<input class='w3-input w3-border' "+name_disabled+
+							" type='text'"+
+							" id='"+id+"_name'"+
+							" name='"+id+"[name]' "+required+
+							" oninput='name_change(this);'>"+
           "</div>"+
           "<div class='w3-section "+id+"_enabled' style='color:silver;'>"+
-            "<label>Partisipant-type</label>"+
-		get_camp_type(id,"adult",	"Adult (18+)"			)+
+            "<label class='da'>Alder:</label>"+
+            "<label class='en'>Age:</label>"+
+            "<label class='de'>Alter:</label>"+
+		get_camp_type(id,"adult",	"Voksen (18+)",		"Adult (18+)",			"Erwachsene (18+)"	)+
 		extra_ticket_types+
           "</div>"+
           "<div class='w3-section "+id+"_enabled' style='color:silver;'>"+
-            "<label>Nickname:</label>"+
-            "<input class='w3-input w3-border' "+name_disabled+" type='text' id='"+id+"_nickame'>"+
+            "<label>Nick:</label>"+
+            "<input class='w3-input w3-border' "+name_disabled+
+							" type='text'"+
+							" id='"+id+"_nickname'"+
+							" name='"+id+"[nickname]'"+
+							" >"+
           "</div>"+
           "<div class='w3-section "+id+"_enabled' style='color:silver;'>"+
-            "<label>Excursions:</label>"+
-            "<div class='"+id+"_enabled'>"+
-               "<input disabled class='w3-checkbox w3-border recalc "+id+"_enabled' type='checkbox' id='"+id+"_slottet' onClick='click_slot(this,true);' >"+
-				" <span class='slottet_text'>Join the excursion to Sønderborg Castle"+
+            "<label class='da'>Udflugter</label>"+
+            "<label class='en'>Excursions</label>"+
+            "<label class='de'>Ausflüge</label>"+
+       	     "<div class='"+id+"_enabled'>"+
+               "<input disabled class='w3-checkbox w3-border recalc "+id+"_enabled'"+
+							" type='checkbox'"+
+							" id='"+id+"_slottet'"+
+							" name='"+id+"[slottet]'"+
+							" onClick='click_slot(this,true);'"+
+							" >"+
+				" <span class='da'>Deltag i udflugten til Sønderborg Slot</span>"+
+				" <span class='en'>Join the excursion to Sønderborg Castle</span>"+
+				" <span class='de'>Nehmen Sie an der Exkursion zum Schloss Sønderborg teil</span>"+
 				" (+<span id='"+id+"_slottet_pris' class='pris_slottet_adult'></span>)"+
 													"</span>"+
             "</div>"+
-            "<input disabled class='w3-checkbox w3-border recalc' type='checkbox' id='"+id+"_stjernebillet' onchange='recalc();'>"+
+            "<input disabled class='w3-checkbox w3-border recalc'"+
+							" type='checkbox'"+
+							" id='"+id+"_stjernebillet'"+
+							" name='"+id+"[stjernebillet]'"+
+							" onchange='recalc();'"+
+							" >"+
 				" <span class='stjerne_text' id='"+id+"_stjerne_text'>"+
 								"Upgrade ticket to include Dybbøl Banke and Universe"+
 														" (+"+
-					"<span id='"+id+"_stjerne_pris' class='stjerne_text pris_stjerne_adult'></span>"+
+					"<span id='"+id+"_stjerne_pris' class='stje_rne_text pris_stjerne_adult'></span>"+
 															")</span>"+
 
           "</div>"+
           "<div class='w3-section "+id+"_enabled' style='color:silver;'>"+
-            "<label>Amount in DKK to preload on kiosk-account:</label>"+
-            "<input disabled class='w3-input w3-border recalc "+id+"_enabled' type='text' id='"+id+"_kiosk' oninput='recalc();'>"+
+            "<label class='da'>Beløb i DKK til forbrug i vores kiosk:</label>"+
+            "<label class='en'>Amount in DKK for consumption in our kiosk:</label>"+
+            "<label class='de'>Betrag in DKK für den Verbrauch in unserem Kiosk:</label>"+
+            "<input disabled class='w3-input w3-border recalc "+id+"_enabled'"+
+							" type='text'"+
+							" id='"+id+"_kiosk'"+
+							" name='"+id+"[kiosk]'"+
+							" oninput='recalc();'"+
+							" >"+
           "</div>"+
 "";
 }
@@ -790,8 +850,10 @@ x = document.getElementsByClassName("pris_stjerne_adult");	for (i = 0; i < x.len
 x = document.getElementsByClassName("pris_stjerne_young");	for (i = 0; i < x.length; i++) { set_pris(x[i],pris_stjerne_young	); }
 x = document.getElementsByClassName("pris_stjerne_child");	for (i = 0; i < x.length; i++) { set_pris(x[i],pris_stjerne_child	); }
 x = document.getElementsByClassName("pris_stjerne_smallchild");	for (i = 0; i < x.length; i++) { set_pris(x[i],pris_stjerne_smallchild	); }
-</script>
+x = document.getElementsByClassName("pris_stjerne_smallchild");	for (i = 0; i < x.length; i++) { set_pris(x[i],pris_stjerne_smallchild	); }
 
+name_change(document.getElementById("person_1_name"));
+</script>
 
 </body>
 </html>
