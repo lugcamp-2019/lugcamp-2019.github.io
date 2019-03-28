@@ -55,7 +55,7 @@ var bib_v=	[_syd[0]+(_vest[0]-_syd[0])/9*6,	_vest[1]-(_vest[1]-_syd[1])/9*3];
 var bib_n =	[bib_v[0]+offset[0],bib_v[1]+offset[1]];
 var bib_e =	[bib_s[0]+offset[0],bib_s[1]+offset[1]];
 setmarker([	[54.9635583,9.6548926],	[54.9636260,9.6549501],	[54.9636938,9.6547084],	[54.9636271, 9.6546518]	],
-								'red',	'Dining-area');
+								'red',	'main computing-area');
 var kitchen_e = [54.9635327,9.6548693];
 var kitchen_s = [54.9634586,9.6548063];
 var nr8_v = 	[54.9635785,9.6543785];
@@ -92,11 +92,31 @@ var osm_1283223142_ = [osm_1283223142[0]+l[0]*0.2,osm_1283223142[1]+l[1]*0.2];
 setmarker([	osm_1283223109,osm_6336132888,osm_6336132887,osm_1283223105,osm_1283223066,osm_1283223142,osm_1283223142_,osm_1283223026_	],
 								'blue',	'Toilets and shower for the gym');
 setmarker([	osm_1283223142_,osm_6336132889,osm_6336132890,osm_1283223026_	],
-								'red',	'Gym'						+'<br/>'+
-									'main computing-area'				);
+								'red',	'Gym');
 
 setmarker([	[54.96403,9.6551],	[54.96431,9.65526],	[54.96440,9.65489],	[54.96413,9.65464]	],
 								'green','Area for tents');
 setmarker([	osm_1283223113,osm_1283223207,osm_6336132890	],
 								'green',	'Area for caravans etc');
 osmap.fitBounds(fitBounds);
+
+L.marker([48.783, 10.490]).addTo(osmap).bindPopup("2000 Karlshof (D)");
+L.marker([48.784, 10.491]).addTo(osmap).bindPopup("2001 Karlshof (D)");
+L.marker([54.780, 9.397]).addTo(osmap).bindPopup("2002 Flensburg (D)");
+L.marker([46.848, 9.477]).addTo(osmap).bindPopup("2003 Felsberg (CH)");
+L.marker([54.781, 9.398]).addTo(osmap).bindPopup("2004 Flensburg (D)");
+L.marker([51.266, 7.183]).addTo(osmap).bindPopup("2005 Wuppertal (D)");
+L.marker([47.500,10.233]).addTo(osmap).bindPopup("2006 Ofterschwang (D)");
+L.marker([46.683, 7.850]).addTo(osmap).bindPopup("2007 Interlaken (CH)");
+L.marker([54.782, 9.399]).addTo(osmap).bindPopup("2008 Flensburg (D)");
+L.marker([47.566,10.216]).addTo(osmap).bindPopup("2009 Immenstadt (D)");
+L.marker([48.444,10.154]).addTo(osmap).bindPopup("2010 Roth (D)");
+L.marker([46.616,10.333]).addTo(osmap).bindPopup("2011 Tschierv (CH)");
+L.marker([54.833, 9.550]).addTo(osmap).bindPopup("2012 Glücksburg / Holnis (D)");
+L.marker([51.267, 7.184]).addTo(osmap).bindPopup("2013 Wuppertal (D)");
+L.marker([53.565,10.001]).addTo(osmap).bindPopup("2014 Hamburg (D)");
+L.marker([51.033, 7.650]).addTo(osmap).bindPopup("2015 Bergneustadt (D)");
+L.marker([49.133, 8.600]).addTo(osmap).bindPopup("2016 Bruchsal (D)");
+L.marker([54.630, 8.983]).addTo(osmap).bindPopup("2017 Bredstedt (D)");
+L.marker([51.102, 7.012]).addTo(osmap).bindPopup("2018 Leichlingen (D)");
+//L.marker([            ]).addTo(osmap).bindPopup("2019 Ullerup (DK)");
