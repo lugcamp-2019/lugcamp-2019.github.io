@@ -1,17 +1,18 @@
 ///////////////////////////////////////////////////////////
 //
 //	Priser
-//
-var pris_camp_adult		= 700.00;
-var pris_camp_young		= 700.00;
-var pris_camp_child		= 300.00;
-var pris_camp_smallchild	=   0.00;
-var pris_slottet_adult		= 125.00;
-var pris_slottet_young		=  45.00;	var pris_slottet_child = pris_slottet_young;
-var pris_slottet_smallchild	=   0.00;
-var pris_stjerne_adult		= 295-70;
-var pris_stjerne_young		= 195.00;	var pris_stjerne_child = pris_stjerne_young;
-var pris_stjerne_smallchild	=   0.00;
+// --------------------------------------------------------
+var pris_camp_adult				= 720.00;
+var pris_camp_young				= 720.00;
+var pris_camp_child				= 400.00;
+var pris_camp_smallchild			=   0.00;
+var pris_slottet_adult				= 130.00;
+var pris_slottet_young	= pris_slottet_child	=  50.00;
+var pris_slottet_smallchild			=   0.00;
+var pris_stjerne_adult				= 300-70;
+var pris_stjerne_young	= pris_stjerne_child	= 200.00;
+var pris_stjerne_smallchild			=   0.00;
+// --------------------------------------------------------
 ///////////////////////////////////////////////////////////
 
 ///////////////////////////////////////////////////////////////////////////////

@@ -5,23 +5,6 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins">
-<script>
-	///////////////////////////////////////////////////////////
-	//
-	//	Priser
-	//
-	var pris_camp_adult		= 40000000.00;							// 700.00;
-	var pris_camp_young		= 40000000.00;							// 700.00;
-	var pris_camp_child		= 20000000.00;							// 300.00;
-	var pris_camp_smallchild	= 10000000.00;							//   0.00;
-	var pris_slottet_adult		=   400000.00;							// 125.00;
-	var pris_slottet_young		=   200000.00;	var pris_slottet_child = pris_slottet_young;	//  45.00;
-	var pris_slottet_smallchild	=   100000.00;							//   0.00;
-	var pris_stjerne_adult		=     4000.00;							// 295.00+50.00;
-	var pris_stjerne_young		=     2000.00;	var pris_stjerne_child = pris_stjerne_young;	// 195.00+50.00;
-	var pris_stjerne_smallchild	=     1000.00;							//   0.00;
-	///////////////////////////////////////////////////////////
-</script>
 
 <style>
 body,h1,h2,h3,h4,h5 {font-family: "Poppins", sans-serif}
@@ -41,14 +24,23 @@ body {font-size:16px;}
 .da { display:none; }
 .pending { background:yellow; }
 .cart_value:after,.xpris:after	{ content:" DKK"; }
+.cart_value_eur:before	{ content:" (~"; }
+.cart_value_eur:after	{ content:" EUR)"; }
 .lugcamp:after	{ content:"(.de)"; font-size:66%; }
 </style>
-<script src="jquery.min.js"></script>
+<script src="https://lugcamp.alslug.dk/jquery.min.js"></script>
 <body>
 <!-- Sidebar/menu -->
 <nav class="w3-sidebar w3-red w3-collapse w3-top w3-large w3-padding" style="z-index:3;width:300px;font-weight:bold;" id="mySidebar"><br>
   <a href="javascript:void(0)" onclick="w3_close()" class="w3-button w3-hide-large w3-display-topleft" style="width:100%;font-size:22px">Close Menu</a>
-  <div>Cart: <span class="cart_value"></span></div>
+</div>
+  <div class="w3-container">
+    <div>
+      <a href="#" onclick="switch_to('da'); return false;"><img src="https://lugcamp.alslug.dk/da.png" /></a>
+      <a href="#" onclick="switch_to('de'); return false;"><img src="https://lugcamp.alslug.dk/de.png" /></a>
+      <a href="#" onclick="switch_to('en'); return false;"><img src="https://lugcamp.alslug.dk/en.png" /></a>
+    </div>
+  </div>
   <div class="w3-container">
     <h3 class="w3-padding-64"><b><span class="lugcamp">LugCamp</span><br/>2019</b></h3>
   </div>
@@ -99,9 +91,9 @@ body {font-size:16px;}
 <div class="w3-main" style="margin-left:340px;margin-right:40px">
 
   <div style="float:right;">
-    <a href="#" onclick="switch_to('da'); return false;"><img src="da.png" /></a>
-    <a href="#" onclick="switch_to('de'); return false;"><img src="de.png" /></a>
-    <a href="#" onclick="switch_to('en'); return false;"><img src="en.png" /></a>
+    <a href="#" onclick="switch_to('da'); return false;"><img src="https://lugcamp.alslug.dk/da.png" /></a>
+    <a href="#" onclick="switch_to('de'); return false;"><img src="https://lugcamp.alslug.dk/de.png" /></a>
+    <a href="#" onclick="switch_to('en'); return false;"><img src="https://lugcamp.alslug.dk/en.png" /></a>
   </div>
 
   <!-- Header -->
@@ -463,10 +455,160 @@ body {font-size:16px;}
 	<span class="de">Preise und Anmeldung</span>
     </b></h1>
     <hr style="width:50px;border:5px solid red" class="w3-round">
-    <p class="missing">Prices and registration will come online shortly.
-		</p>
-    <p class="w3-xlarge missing">Right now a test in online. Please do not submit registrations yet.
-		</p>
+    <div class="da">Tilmeldingen omfatter:</div>
+    <div class="en">Registration includes:</div>
+    <div class="de">Die Registrierung beinhaltet:</div>
+    <ul>
+      <li>
+        <div class="da">Følgende måltider er inkluderet i prisen:</div>
+        <div class="en">The following meals are included in the price:</div>
+        <div class="de">Die folgenden Mahlzeiten sind im Preis enthalten:</div>
+        <table border=1 cellspacing=0><tr>
+          <td rowspan=2>
+          </td>
+          <td rowspan=2 align=center>
+            <div class="da">Morgenmad.	</div>
+            <div class="en">Breakfast.	</div>
+            <div class="de">Frühstück.	</div>
+          </td>
+          <td align=center>
+            <div class="da">Middagsmad:	</div>
+            <div class="en">Lunch:	</div>
+            <div class="de">Mittagessen	</div>
+          </td>
+          <td align=center>
+            <div class="da">Aftensmad:	</div>
+            <div class="en">Dinner:	</div>
+            <div class="de">Abendessen:	</div>
+          </td>
+        </tr><tr>
+          <td align=center>
+            <div class="da">	Grillen bliver startet op.	</div>
+            <div class="en">	The grill is fired up.		</div>
+            <div class="de">	Der Grill wird gestartet.	</div>
+          </td>
+          <td align=center>
+            <div class="da">	Stegebuffet med salatbar	</div>
+            <div class="en">	Roast buffet with salad bar	</div>
+            <div class="de">	Bratenbuffet mit Salatbar	</div>
+          </td>
+        </tr><tr>
+          <td>
+            <span class="da">Torsdag:</span>
+            <span class="en">Thursday:</span>
+            <span class="de">Donnerstag:</span>
+          </td>
+          <td align=center><span class="food_no"></span></td>
+          <td align=center><span class="food_yes"></span></td>
+          <td align=center><span class="food_yes"></span></td>
+<!--
+          <td>
+            <div class="da">Svinekølle helstegt som vildsvin,</div>
+            <div class="da">mør oksesteg glaseret med kraftfuld smag</div>
+            <div class="da">og saftig kryddermarineret kalkunbryst.</div>
+
+            <div class="en">Pork roasted as wild boar,</div>
+            <div class="en">tender roast beef glazed with powerful flavor</div>
+            <div class="en">and juicy spice marinated turkey breast.</div>
+
+            <div class="de">Schweinefleisch gebraten wie Wildschwein,</div>
+            <div class="de">zartes Roastbeef mit kräftigem Geschmack</div>
+            <div class="de">und saftige Gewürz marinierte Putenbrust.</div>
+          </td>
+-->
+        </tr><tr>
+          <td>
+            <span class="da">Fredag:</span>
+            <span class="en">Friday:</span>
+            <span class="de">Freitag:</span>
+          </td>
+          <td align=center><span class="food_yes"></span></td>
+          <td align=center><span class="food_yes"></span></td>
+          <td align=center><span class="food_yes"></span></td>
+<!--
+          <td>
+            <div class="da">Mørstegt oksesteg med US-barbeque,</div>
+            <div class="da">saftig kalkunfilet med indisk karry og ananas,</div>
+            <div class="da">kyllingelår krydret som i Spanien,</div>
+            <div class="da">hjemmelavede frikadeller.</div>
+
+            <div class="en">Roast beef with US barbeque,</div>
+            <div class="en">juicy turkey fillet with Indian curry and pineapple,</div>
+            <div class="en">chicken leg spiced as in Spain,</div>
+            <div class="en">homemade meatballs.</div>
+
+            <div class="de">Roastbeef mit US-barbeque,</div>
+            <div class="de">saftiges Putenfilet mit indischem Curry und Ananas,</div>
+            <div class="de">Hühnerkeule gewürzt wie in Spanien,</div>
+            <div class="de">hausgemachte Frikadellen.</div>
+          </td>
+-->
+        </tr><tr>
+          <td>
+            <span class="da">Lørdag:</span>
+            <span class="en">Saturday:</span>
+            <span class="de">Samstag:</span>
+          </td>
+          <td align=center><span class="food_yes"></span></td>
+          <td align=center><span class="food_yes"></span></td>
+          <td align=center><span class="food_yes"></span></td>
+<!--
+          <td>
+            <div class="da">Helstegt tyndstegsfilet,</div>
+            <div class="da">glaseret skinke,</div>
+            <div class="da">stegt kyllingelår,</div>
+            <div class="da">helstegt nakkefilet basilikum,</div>
+            <div class="da">kryddermarineret kalkunfilet.</div>
+
+            <div class="en">Roasted thin fillet,</div>
+            <div class="en">glazed ham,</div>
+            <div class="en">fried chicken leg,</div>
+            <div class="en">basil fillet,</div>
+            <div class="en">spice marinated turkey fillet.</div>
+
+            <div class="de">Geröstetes dünnes Filet,</div>
+            <div class="de">glasierter Schinken,</div>
+            <div class="de">gebratene Hähnchenschenkel,</div>
+            <div class="de">Basilikumfilet,</div>
+            <div class="de">Gewürz-mariniertes Putenfilet.</div>
+-->
+        </tr><tr>
+          <td>
+            <span class="da">Søndag:</span>
+            <span class="en">Sunday:</span>
+            <span class="de">Sontag:</span>
+          </td>
+          <td align=center><span class="food_yes"></span></td>
+          <td align=center><span class="food_yes"></span></td>
+          <td align=center><span class="food_no"></span></td>
+        </tr></table>
+        <div class="da">Aften-buffeten er forskellig de tre dage,
+					men inkludere 2-3 forskellige slags kød,
+					forskellige salater og flere slags kartofler.</div>
+        <div class="en">The evening buffet is different for the three days,
+					but include 2-3 different kinds of meat,
+					various salads and several kinds of potatoes.</div>
+        <div class="de">Das Abendbuffet variirt an den drei Tagen,
+					aber beeinhaltet immer 2-3 verschiedene Fleischsorten,
+					verschiedene Salate und verschiedene Arten von Kartoffeln.</div>
+      </li>
+      <li>
+		<span class="da">Overnatning i sovesal eller eget telt eller campingvogn.</span>
+		<span class="en">Accommodation in dormitory or own tent or caravan.</span>
+		<span class="de">Unterkunft im Schlafsaal oder eigenem Zelt oder Wohnwagen.</span>
+		</li>
+      <li>
+		<span class="da">Adgang til siddeplads med LAN og strøm. Der er Wifi i hele området.</span>
+		<span class="en">Access to seating with LAN and power. There is Wifi throughout the area.</span>
+		<span class="de">Zugang zu Sitzplätzen mit LAN und Strom. Es gibt Wifi im gesamten Bereich.</span>
+		</li>
+    </ul>
+<!--
+    <p class="w3-xxlarge missing">
+					Right now a test in online.
+					<br/>					Please do not submit registrations yet.
+				</p>
+-->
     <form action="https://kartoteket.alslug.dk/lugcamp/registration.php" method="post">
       <div class="w3-row-padding">
         <!-- --------------------------------------------------------------------------- -->
@@ -496,21 +638,38 @@ After the camp you will not hear from us again.">&#128712;</span></label>
             <label class="de">Handy-nummer <span title="Wir senden eine Bestätigung,
 und Infos zum Lager via SMS zu dieser Nummer.
 Nach dem Camp werden Sie nicht mehr von uns hören.">&#128712;</span></label>
-            <input class="w3-input w3-border" type="text" name="Mobile" />
+            <input class="w3-input w3-border" type="text" name="phone" placeholder="+49 123456789 - remember coutrycode" />
           </div>
           <div class="w3-section">
             <label class="da">Hvilken LUG kommer du fra?</label>
             <label class="en">Witch LUG do you come from?</label>
             <label class="de">Von welchem LUG kommst du?</label>
-            <input class="w3-input w3-border" type="text" name="Lug" />
+            <input class="w3-input w3-border" type="text" name="lug" />
           </div>
           <div class="w3-section">
             <label class="da">I hvilken by og land bor du?</label>
             <label class="en">In witch city and country do you live?</label>
             <label class="de">In welcher Stadt und Land lebst du?</label>
-            <input class="w3-input w3-border" type="text" name="Home" />
+            <input class="w3-input w3-border" type="text" name="home" />
           </div>
-          <input class="w3-input w3-border cart_value" type="text" name="Sum" />
+          <div class="w3-section">
+            <label class="da">Særlig instrukser vedr måltider?</label>
+            <label class="en">Special instructions for meals?</label>
+            <label class="de">Spezielle Anweisungen für Mahlzeiten?</label>
+            <input class="w3-input w3-border" type="text" name="food_info" placeholder="Allergi? Vegetar?"/>
+          </div>
+          <div class="w3-section">
+            <label class="da">Hvornår forventer I at ankomme til Ullerup?</label>
+            <label class="en">When do you expect to arrive in Ullerup?</label>
+            <label class="de">Wann plant Ihr in Ullerup anzukommen?</label>
+            <input class="w3-input w3-border" type="text" name="ankomst"/>
+          </div>
+          <div>
+            <input class="w3-input w3-border cart_value" name="initial_payment" type="hidden" readonly />
+ <!--
+           <span class="cart_value_eur"></span>
+-->
+          </div>
         </div>
         <!-- --------------------------------------------------------------------------- -->
         <div class="w3-bar-block" id="open_2_3">
@@ -553,20 +712,7 @@ Nach dem Camp werden Sie nicht mehr von uns hören.">&#128712;</span></label>
       <button type="submit" id="registration_submit" class="w3-button w3-block w3-padding-large w3-red w3-margin-bottom">
 				Send registration and pay <span class="cart_value"></span>
 				</button>
-<form action="your-server-side-code" method="POST">
-  <script
-    src="https://checkout.stripe.com/checkout.js" class="stripe-button"
-    data-key="pk_test_xaFjcaiPopJpuTvDwW1W3E5X"
-    data-amount="999"
-    data-name="AlsLUG - Alssund Linux Brugergruppe"
-    data-description="LugCamp 2019"
-    data-image="https://www.alslug.dk/images/alslug-logo-modded.png"
-    data-locale="auto"
-    data-zip-code="true"
-    data-currency="dkk">
-  </script>
-</form>
-    </form>  
+    </form>
   </div>
 
   <!-- Contact -->
@@ -620,13 +766,6 @@ function onClick(element) {
 }
 
 // Language selection
-function hide(lang) {
-  var x = document.getElementsByClassName(lang);
-  var i;
-  for (i = 0; i < x.length; i++) {
-    x[i].style.display = "none";
-  } 
-}
 function switch_to(lang) {
   $(".da").hide();
   $(".en").hide();
@@ -638,7 +777,7 @@ function name_change(obj) {
 	if (obj.id.substring(9) == "name") {
 		var nr = obj.id.substr(7,1)*1;
 		var disabled = "";	if (obj.value == "")	disabled = "disabled";
-		if (nr < 5) document.getElementById("person_"+(nr+1)+"_name").disabled = disabled;
+		if (nr < 7) document.getElementById("person_"+(nr+1)+"_name").disabled = disabled;
 	}
 	if (obj.value == "") {
 		var x;
@@ -679,11 +818,11 @@ function display_6_7() {
 
 function update_prices(obj) {
 	var id = obj.id.substr(0,8);
-	var type = obj.id.substr(9);
-	if (type == "adult")		{ slottet = pris_slottet_adult;		stjerne = pris_stjerne_adult;		}
-	if (type == "young")		{ slottet = pris_slottet_young;		stjerne = pris_stjerne_young;		}
-	if (type == "child")		{ slottet = pris_slottet_child;		stjerne = pris_stjerne_child;		}
-	if (type == "smallchild")	{ slottet = pris_slottet_smallchild;	stjerne = pris_stjerne_smallchild;	}
+	var age = obj.id.substr(9);
+	if (age == "adult")		{ slottet = pris_slottet_adult;		stjerne = pris_stjerne_adult;		}
+	if (age == "young")		{ slottet = pris_slottet_young;		stjerne = pris_stjerne_young;		}
+	if (age == "child")		{ slottet = pris_slottet_child;		stjerne = pris_stjerne_child;		}
+	if (age == "smallchild")	{ slottet = pris_slottet_smallchild;	stjerne = pris_stjerne_smallchild;	}
 	document.getElementById(id+"_slottet_pris").innerHTML = slottet;
 	document.getElementById(id+"_stjerne_pris").innerHTML = stjerne;
 //	alert(obj.id);
@@ -697,24 +836,32 @@ function recalc() {
 		var id = x[i].id.substr(0,8)
 		var name = id+"_name";
 		name = document.getElementById(name);
-		if (name.value == "")				{								} else 
-		if (x[i].id.substr(9) == "adult")		{ if (x[i].checked)	{ sum += pris_camp_adult;	}	} else
-		if (x[i].id.substr(9) == "young")		{ if (x[i].checked)	{ sum += pris_camp_young;	}	} else
-		if (x[i].id.substr(9) == "child")		{ if (x[i].checked)	{ sum += pris_camp_child;	}	} else
-		if (x[i].id.substr(9) == "smallchild")		{ if (x[i].checked)	{ sum += pris_camp_smallchild;	}	} else
-
-		if (x[i].id.substr(9) == "slottet")		{ if (x[i].checked)	{ sum += pris_slottet_adult;	}	} else
-		if (x[i].id.substr(9) == "stjernebillet")	{ if (x[i].checked)	{ sum += pris_stjerne_adult;	}	} else
-
-		if (x[i].id.substr(9) == "kiosk")		{ if (x[i].value)	{ sum += x[i].value*1;		}	} else
-											{ alert(x[i].id);		}
+		if (name.value == "")				{							} else 
+		if (x[i].id.substr(9) == "adult"	) { if (x[i].checked)		sum += pris_camp_adult;		} else
+		if (x[i].id.substr(9) == "young"	) { if (x[i].checked)		sum += pris_camp_young;		} else
+		if (x[i].id.substr(9) == "child"	) { if (x[i].checked)		sum += pris_camp_child;		} else
+		if (x[i].id.substr(9) == "smallchild"	) { if (x[i].checked)		sum += pris_camp_smallchild;	} else
+		if (x[i].id.substr(9) == "slottet"	) { if (x[i].checked)	{
+			if (document.getElementById(id+"_adult")	.checked)	sum += pris_slottet_adult;
+			if (document.getElementById(id+"_young")	.checked)	sum += pris_slottet_young;
+			if (document.getElementById(id+"_child")	.checked)	sum += pris_slottet_child;
+			if (document.getElementById(id+"_smallchild")	.checked)	sum += pris_slottet_smallchild;
+															}} else
+		if (x[i].id.substr(9) == "stjernebillet") { if (x[i].checked)	{
+			if (document.getElementById(id+"_adult")	.checked)	sum += pris_stjerne_adult;
+			if (document.getElementById(id+"_young")	.checked)	sum += pris_stjerne_young;
+			if (document.getElementById(id+"_child")	.checked)	sum += pris_stjerne_child;
+			if (document.getElementById(id+"_smallchild")	.checked)	sum += pris_stjerne_smallchild;
+															}} else
+		if (x[i].id.substr(9) == "kiosk"	) { if (x[i].value)		sum += x[i].value*1;		} else
+										{	alert(x[i].id);			}
 	//	x[i].disabled="";
 	//	x[i].style.color="black";
 	}
-	x = document.getElementsByClassName("cart_value");	for (i = 0; i < x.length; i++) {
-		x[i].value = sum;
-		x[i].innerHTML = sum;
-	}
+	x = document.getElementsByClassName("cart_value");	for (i = 0; i < x.length; i++)
+		x[i].value = x[i].innerHTML = sum;
+	x = document.getElementsByClassName("cart_value_eur");	for (i = 0; i < x.length; i++)
+		x[i].value = x[i].innerHTML = Math.round(sum/7.35);
 }
 
 function click_slot(slot,do_recalc) {
@@ -727,21 +874,21 @@ function click_slot(slot,do_recalc) {
 	if (do_recalc) recalc();
 }
 
-function get_camp_type(id,type,da,en,de) {
+function get_camp_age(id,age,da,en,de) {
 	var selected = "";
-	if (type == "adult") selected = "checked";
+	if (age == "adult") selected = "checked";
 	return "<div><input disabled class='w3-radio w3-border recalc "+id+"_enabled'"+
 							" type='radio'"+
-							" name='"+id+"[type]'"+
-							" id='"+id+"_"+type+"'"+
-							"  value='"+type+"'"+
+							" name='"+id.replace("_","[")+"][age]'"+
+							" id='"+id+"_"+age+"'"+
+							"  value='"+age+"'"+
 							" onchange='update_prices(this);' "+selected+
-							" >"+
-					"<span>"+
-//						"<span class='da'>"+da+"</span>"+
-////						"<span class='en'>"+en+"</span>"+
+							" > "+
+					"<span> "+
+						"<span class='da'>"+da+"</span>"+
+						"<span class='en'>"+en+"</span>"+
 						"<span class='de'>"+de+"</span>"+
-									" (<span class='pris_camp_"+type+"'></span>)</div>";
+									" (<span class='pris_camp_"+age+"'></span>)</div>";
 }
 
 var i;
@@ -758,31 +905,31 @@ x = document.getElementsByClassName("person");		for (i = 0; i < x.length; i++) {
 
 	var extra_ticket_types = "";
 	if (nr > 0) extra_ticket_types = 
-		get_camp_type(id,"young",	"Ung (12-17 år)",	"Young (12-17 years)",		"Young (12-17 Jahre)"	)+
-		get_camp_type(id,"child",	"Barn (4-11 år)",	"Child (4-11 years)",		"Kind (4-11 Jahre)"	)+
-		get_camp_type(id,"smallchild",	"Small child (0-3 år)",	"Small child (0-3 years)",	"Kleinkind (0-3 Jahre)"	);
+		get_camp_age(id,"young",	"Ung (12-17 år)",	"Young (12-17 years)",		"Young (12-17 Jahre)"	)+
+		get_camp_age(id,"child",	"Barn (4-11 år)",	"Child (4-11 years)",		"Kind (4-11 Jahre)"	)+
+		get_camp_age(id,"smallchild",	"Lille barn (0-3 år)",	"Small child (0-3 years)",	"Kleinkind (0-3 Jahre)"	);
 	x[i].innerHTML = bar+
           "<div class='w3-section'>"+
             "<label>"+name+"</label>"+
             "<input class='w3-input w3-border' "+name_disabled+
 							" type='text'"+
 							" id='"+id+"_name'"+
-							" name='"+id+"[name]' "+required+
+							" name='"+id.replace("_","[")+"][name]' "+required+
 							" oninput='name_change(this);'>"+
           "</div>"+
           "<div class='w3-section "+id+"_enabled' style='color:silver;'>"+
             "<label class='da'>Alder:</label>"+
             "<label class='en'>Age:</label>"+
             "<label class='de'>Alter:</label>"+
-		get_camp_type(id,"adult",	"Voksen (18+)",		"Adult (18+)",			"Erwachsene (18+)"	)+
+		get_camp_age(id,"adult",	"Voksen (18+)",		"Adult (18+)",			"Erwachsene (18+)"	)+
 		extra_ticket_types+
           "</div>"+
           "<div class='w3-section "+id+"_enabled' style='color:silver;'>"+
             "<label>Nick:</label>"+
-            "<input class='w3-input w3-border' "+name_disabled+
+            "<input class='w3-input w3-border "+id+"_enabled' "+name_disabled+
 							" type='text'"+
 							" id='"+id+"_nickname'"+
-							" name='"+id+"[nickname]'"+
+							" name='"+id.replace("_","[")+"][nickname]'"+
 							" >"+
           "</div>"+
           "<div class='w3-section "+id+"_enabled' style='color:silver;'>"+
@@ -793,7 +940,7 @@ x = document.getElementsByClassName("person");		for (i = 0; i < x.length; i++) {
                "<input disabled class='w3-checkbox w3-border recalc "+id+"_enabled'"+
 							" type='checkbox'"+
 							" id='"+id+"_slottet'"+
-							" name='"+id+"[slottet]'"+
+							" name='"+id.replace("_","[")+"][slottet]'"+
 							" onClick='click_slot(this,true);'"+
 							" >"+
 				" <span class='da'>Deltag i udflugten til Sønderborg Slot</span>"+
@@ -805,7 +952,7 @@ x = document.getElementsByClassName("person");		for (i = 0; i < x.length; i++) {
             "<input disabled class='w3-checkbox w3-border recalc'"+
 							" type='checkbox'"+
 							" id='"+id+"_stjernebillet'"+
-							" name='"+id+"[stjernebillet]'"+
+							" name='"+id.replace("_","[")+"][stjernebillet]'"+
 							" onchange='recalc();'"+
 							" >"+
 				" <span class='stjerne_text' id='"+id+"_stjerne_text'>"+
@@ -822,38 +969,24 @@ x = document.getElementsByClassName("person");		for (i = 0; i < x.length; i++) {
             "<input disabled class='w3-input w3-border recalc "+id+"_enabled'"+
 							" type='text'"+
 							" id='"+id+"_kiosk'"+
-							" name='"+id+"[kiosk]'"+
+							" name='"+id.replace("_","[")+"][kiosk]'"+
 							" oninput='recalc();'"+
 							" >"+
           "</div>"+
 "";
 }
 
-///////////////////////////////////////////////////////////////////////////////
-//
-//	Udfylding af diverse priser
-//
-function set_pris(el,pris) {
-	el.innerHTML = pris;
-	el.insertAdjacentHTML("afterend"," DKK");
-}
-
-x = document.getElementsByClassName("pris_camp_adult");		for (i = 0; i < x.length; i++) { set_pris(x[i],pris_camp_adult		); }
-x = document.getElementsByClassName("pris_camp_young");		for (i = 0; i < x.length; i++) { set_pris(x[i],pris_camp_young		); }
-x = document.getElementsByClassName("pris_camp_child");		for (i = 0; i < x.length; i++) { set_pris(x[i],pris_camp_child		); }
-x = document.getElementsByClassName("pris_camp_smallchild");	for (i = 0; i < x.length; i++) { set_pris(x[i],pris_camp_smallchild	); }
-x = document.getElementsByClassName("pris_slottet_adult");	for (i = 0; i < x.length; i++) { set_pris(x[i],pris_slottet_adult	); }
-x = document.getElementsByClassName("pris_slottet_young");	for (i = 0; i < x.length; i++) { set_pris(x[i],pris_slottet_young	); }
-x = document.getElementsByClassName("pris_slottet_child");	for (i = 0; i < x.length; i++) { set_pris(x[i],pris_slottet_child	); }
-x = document.getElementsByClassName("pris_slottet_smallchild");	for (i = 0; i < x.length; i++) { set_pris(x[i],pris_slottet_smallchild	); }
-x = document.getElementsByClassName("pris_stjerne_adult");	for (i = 0; i < x.length; i++) { set_pris(x[i],pris_stjerne_adult	); }
-x = document.getElementsByClassName("pris_stjerne_young");	for (i = 0; i < x.length; i++) { set_pris(x[i],pris_stjerne_young	); }
-x = document.getElementsByClassName("pris_stjerne_child");	for (i = 0; i < x.length; i++) { set_pris(x[i],pris_stjerne_child	); }
-x = document.getElementsByClassName("pris_stjerne_smallchild");	for (i = 0; i < x.length; i++) { set_pris(x[i],pris_stjerne_smallchild	); }
-x = document.getElementsByClassName("pris_stjerne_smallchild");	for (i = 0; i < x.length; i++) { set_pris(x[i],pris_stjerne_smallchild	); }
+x = document.getElementsByClassName("food_no"); for (i = 0; i < x.length; i++)
+	x[i].innerHTML =	"<span class='da'>Nej</span>"+
+				"<span class='en'>No</span>"+
+				"<span class='de'>Nein</span>";
+x = document.getElementsByClassName("food_yes"); for (i = 0; i < x.length; i++)
+	x[i].innerHTML =	"<span class='da'>Ja</span>"+
+				"<span class='en'>Yes</span>"+
+				"<span class='de'>Ja</span>";
 
 name_change(document.getElementById("person_1_name"));
 </script>
-
+<script src="priser.js""></script>
 </body>
 </html>
