@@ -27,6 +27,7 @@ body {font-size:16px;}
 .cart_value_eur:before	{ content:" (~"; }
 .cart_value_eur:after	{ content:" EUR)"; }
 .lugcamp:after	{ content:"(.de)"; font-size:66%; }
+.sponsor	{ border:10px solid gray; padding:10px; margin-bottom:10px; }
 </style>
 <script src="https://lugcamp.alslug.dk/jquery.min.js"></script>
 <body>
@@ -35,14 +36,7 @@ body {font-size:16px;}
   <a href="javascript:void(0)" onclick="w3_close()" class="w3-button w3-hide-large w3-display-topleft" style="width:100%;font-size:22px">Close Menu</a>
 </div>
   <div class="w3-container">
-    <div>
-      <a href="#" onclick="switch_to('da'); return false;"><img src="https://lugcamp.alslug.dk/da.png" /></a>
-      <a href="#" onclick="switch_to('de'); return false;"><img src="https://lugcamp.alslug.dk/de.png" /></a>
-      <a href="#" onclick="switch_to('en'); return false;"><img src="https://lugcamp.alslug.dk/en.png" /></a>
-    </div>
-  </div>
-  <div class="w3-container">
-    <h3 class="w3-padding-64"><b><span class="lugcamp">LugCamp</span><br/>2019</b></h3>
+    <h3 class="w3-padding-32"><b><span class="lugcamp">LugCamp</span><br/>2019</b></h3>
   </div>
   <div class="w3-bar-block">
     <a href="#" onclick="w3_close()" class="w3-bar-item w3-button">
@@ -55,11 +49,18 @@ body {font-size:16px;}
 	<span class="en">Plans</span>
 	<span class="de">Pläne</span>
     </a> 
+    <a href="#sponsors" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">
+	<span class="da">Sponsorer</span>
+	<span class="en">Sponsors</span>
+	<span class="de">Sponsoren</span>
+    </a> 
+<!--
     <a href="#pictures" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">
 	<span class="da">Billeder</span>
 	<span class="en">Pictures</span>
 	<span class="de">Bilder</span>
     </a> 
+-->
     <a href="#external" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">
 	<span class="da">Udflugter</span>
 	<span class="en">Excursions</span>
@@ -75,6 +76,13 @@ body {font-size:16px;}
 	<span class="en">Contact us</span>
 	<span class="de">Kontaktieren Sie uns</span>
     </a>
+  </div>
+  <div class="w3-container">
+    <div>
+      <a href="#" onclick="switch_to('da'); return false;"><img src="https://lugcamp.alslug.dk/da.png" /></a>
+      <a href="#" onclick="switch_to('de'); return false;"><img src="https://lugcamp.alslug.dk/de.png" /></a>
+      <a href="#" onclick="switch_to('en'); return false;"><img src="https://lugcamp.alslug.dk/en.png" /></a>
+    </div>
   </div>
 </nav>
 
@@ -142,15 +150,9 @@ body {font-size:16px;}
       <li class="en">Meeting-room for presentations etc in the space of <a target='_blank' href='https://www.alslug.dk'>AlsLUG</a>.</li>
       <li class="de">Besprechungsraum für Präsentationen usw. im Raum der <a target='_blank' href='https://www.alslug.dk'>AlsLUG</a>.</li>
 
-      <li class="da">Mulighed for overnatning i det gamle bibliotek.</li>
-      <li class="en">Possibility of accommodation in the old library.</li>
-      <li class="de">Möglichkeit der Unterbringung in der alten Bibliothek.</li>
-
-<!--
-      <li class="da">Seperate spise- og hygge område.</li>
-      <li class="en">Seperate dining-area.</li>
-      <li class="de">Separate Essbereich.</li>
--->
+      <li class="da">Mulighed for overnatning i det gamle bibliotek og i gymnastiksalen..</li>
+      <li class="en">Possibility of accommodation in the old library and the gym.</li>
+      <li class="de">Möglichkeit der Unterbringung in der alten Bibliothek und ind der Gymnastikhalle.</li>
 
       <li class="da">Fiber-forbindelse til nettet.</li>
       <li class="en">Fiber-connection to the net.</li>
@@ -228,7 +230,59 @@ body {font-size:16px;}
 <link rel='stylesheet'	href='https://kartoteket.alslug.dk/proxy.php/leaflet/leaflet.css'	/>
 <script src="map.js"></script>
   
+
+  <div class="w3-container" id="sponsors" sty_le="margin-top:75px">
+    <h1 class="w3-xxxlarge w3-text-red"><b>
+	<span class="da">Sponsorer</span>
+	<span class="en">Sponsors</span>
+	<span class="de">Sponsoren</span>
+    </b></h1>
+    <hr style="width:50px;border:5px solid red" class="w3-round">
+
+    <div class="w3-row-padding">
+      <div class="w3-half">
+        <div class="sponsor">
+          <a href="http://shop.oreilly.com/" target="_blank"><img src="oreilly_logo_mark_red.svg" width="100%"/></a>
+          <span class="da">O'Reilly sponserer bøger som trækkes mellem alle deltagere af campen.</span>
+          <span class="en">O'Reilly sponsors books that are drawn between all participants of the camp.</span>
+          <span class="de">O'Reilly sponsert Bücher, die zwischen allen Teilnehmern des Lagers gezogen werden.</span>
+          <a href="#oreilly-note">(*)</a>
+        </div>
+<!--
+        <div class="sponsor">
+          <a href="http://minkøbmand.dk/butik/min-koebmand-blans" target="_blank"><img src="minkobmand-logo.png" width="100%"/></a>
+          <div class="da"></div>
+          <div class="en"></div>
+          <div class="de"></div>
+        </div>
+-->
+      </div>
+      <div class="w3-half">
+<!--
+        <div class="sponsor">
+          <a href="http://www.mjelsbryghus.dk/" target="_blank"><img src="mjels-bryghus.png" width="100%"/></a>
+          <div class="da"></div>
+          <div class="en"></div>
+          <div class="de"></div>
+        </div>
+-->
+      </div>
+    </div>
+    <div id="oreilly-note">
+      <div class="da"><b>Note til O'Reilly-bøgerne:</b></div>
+      <div class="da">Du skal være til stede når bøgerne trækkes lørdag aften,
+				eller på forhånd have aftalt transport med en anden deltager.</div>
+      <div class="en"><b>Note on the O'Reilly-books:</b></div>
+      <div class="en">You must be present when the books are drawn on Saturday night,
+				or have arranged transport with another participant of the camp.</div>
+      <div class="de"><b>Anmerkung zu den O'Reilly-Büchern:</b></div>
+      <div class="de">Sie müssen anwesend sein, wenn am Samstagabend die Bücher gezogen werden.
+				oder einen Transport mit einem anderen Teilnehmer des Camps vereinbart haben.</div>
+    </div>
+  </div>
+
   <!-- Photo grid (modal) -->
+<!--
   <div class="w3-container" style="margin-top:75px" id="pictures">
     <h1 class="w3-xxxlarge w3-text-red"><b>
 	<span class="da">Billeder</span>
@@ -240,7 +294,6 @@ body {font-size:16px;}
 		I'll post some images of the site shortly.
     </p>
   </div>
-<!--
   <div class="w3-row-padding">
     <div class="w3-half">
       <img src="https://www.w3schools.com/w3images/atrium.jpg" style="width:100%" onclick="onClick(this)" alt="Light, white and tight scandinavian d_esign">
@@ -579,7 +632,12 @@ body {font-size:16px;}
             <span class="de">Sontag:</span>
           </td>
           <td align=center><span class="food_yes"></span></td>
-          <td align=center><span class="food_yes"></span></td>
+          <td align=center>
+            <span class="food_yes"></span>
+            <span class="da">(Rester fra lørdag)</span>
+            <span class="en">(Whatever is left)</span>
+            <span class="de">(Was übrig geblieben ist)</span>
+          </td>
           <td align=center><span class="food_no"></span></td>
         </tr></table>
         <div class="da">Aften-buffeten er forskellig de tre dage,
