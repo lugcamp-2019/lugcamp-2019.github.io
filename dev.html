@@ -709,12 +709,6 @@ Nach dem Camp werden Sie nicht mehr von uns hören.">&#128712;</span></label>
             <input class="w3-input w3-border" type="text" name="home" />
           </div>
           <div class="w3-section">
-            <label class="da">Særlig instrukser vedr måltider?</label>
-            <label class="en">Special instructions for meals?</label>
-            <label class="de">Spezielle Anweisungen für Mahlzeiten?</label>
-            <input class="w3-input w3-border" type="text" name="food_info" placeholder="Allergi? Vegetar?"/>
-          </div>
-          <div class="w3-section">
             <label class="da">Hvornår forventer I at ankomme til Ullerup?</label>
             <label class="en">When do you expect to arrive in Ullerup?</label>
             <label class="de">Wann plant Ihr in Ullerup anzukommen?</label>
@@ -1029,8 +1023,19 @@ x = document.getElementsByClassName("person");		for (i = 0; i < x.length; i++) {
 							" id='"+id+"_kiosk'"+
 							" name='"+id.replace("_","[")+"][kiosk]'"+
 							" oninput='recalc();'"+
-							" >"+
+							" />"+
           "</div>"+
+          "<div class='w3-section "+id+"_enabled' style='color:silver;'>"+
+            "<label class='da'>Særlig instrukser vedr måltider?</label>"+
+            "<label class='en'>Special instructions for meals?</label>"+
+            "<label class='de'>Spezielle Anweisungen für Mahlzeiten?</label>"+
+            "<input disabled class='w3-input w3-border "+id+"_enabled'"+
+							" type='text'"+
+							" name='"+id.replace("_","[")+"][food_info]'"+
+							" placeholder='Allergi? Vegetar?' "+
+							" />"+
+          "</div>"+
+
 "";
 }
 
