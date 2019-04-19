@@ -28,6 +28,8 @@ body {font-size:16px;}
 .cart_value_eur:after	{ content:" EUR)"; }
 .lugcamp:after	{ content:"(.de)"; font-size:66%; }
 .sponsor	{ border:10px solid gray; padding:10px; margin-bottom:10px; }
+.food_no	{ background:silver;	}
+
 </style>
 <script src="https://lugcamp.alslug.dk/jquery.min.js"></script>
 <body>
@@ -48,6 +50,11 @@ body {font-size:16px;}
 	<span class="da">Planer</span>
 	<span class="en">Plans</span>
 	<span class="de">Pläne</span>
+    </a> 
+    <a href="#program" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">
+	<span class="da">Program</span>
+	<span class="en">Schedule</span>
+	<span class="de">Progam</span>
     </a> 
     <a href="#sponsors" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">
 	<span class="da">Sponsorer</span>
@@ -171,18 +178,18 @@ body {font-size:16px;}
       <li class="de">Camping für Wohnwagen und Wohmmobile im Hof.</li>
 
       <li>
-        <div class="da">Forskellige foredrag. Har du noget du vil fortælle om?
-					Så send en mail til</div>
-        <div class="en">Various presentations. Do you have a topic you want to tell us about?
-					Please send a mail to</div>
-        <div class="da">Verschiedene Präsentationen. Haben Sie ein Thema, über das Sie
-					uns erzählen möchten? Bitte senden Sie eine Mail an</div>
+        <span class="da">Forskellige foredrag. <br/>Har du noget du vil fortælle om?
+					Så send en mail til</span>
+        <span class="en">Various presentations. <br/>Do you have a topic you want to tell us about?
+					Please send a mail to</span>
+        <span class="de">Verschiedene Präsentationen. <br/>Haben Sie ein Thema, über das Sie
+					uns erzählen möchten? Bitte senden Sie eine Mail an</span>
 
         <a href="mailto:lugcamp-info@alslug.dk">lugcamp-info@alslug.dk</a>
 
-        <div class="da">med detaljer, så vi kan lave en liste her på siden.</div>
-        <div class="en">with details, so we can publish a list here on the site.</div>
-        <div class="de">mit Details, damit wir eine Liste hier auf der Site veröffentlichen können.</div>
+        <span class="da">med detaljer, så vi kan lave en liste her på siden.</span>
+        <span class="en">with details, so we can publish a list here on the site.</span>
+        <span class="de">mit Details, damit wir eine Liste hier auf der Site veröffentlichen können.</span>
       </li>
 
       <li class="da">Et par udflugter ud i området.</li>
@@ -678,52 +685,50 @@ body {font-size:16px;}
 	<span class="de">Preise und Anmeldung</span>
     </b></h1>
     <hr style="width:50px;border:5px solid red" class="w3-round">
-    <div class="da">Tilmeldingen omfatter:</div>
-    <div class="en">Registration includes:</div>
-    <div class="de">Die Registrierung beinhaltet:</div>
+    <div class="da">Tilmeldingen til hele campen omfatter:</div>
+    <div class="en">Registration to the entire camp includes:</div>
+    <div class="de">Die Registrierung  für das gesamte Camp beinhaltet:</div>
     <ul>
       <li>
         <div class="da">Følgende måltider er inkluderet i prisen:</div>
         <div class="en">The following meals are included in the price:</div>
         <div class="de">Die folgenden Mahlzeiten sind im Preis enthalten:</div>
-        <table border=1 cellspacing=0><tr>
-          <td rowspan=2>
+        <table border=0 cellspacing=0><tr>
+          <td class="w3-orange">
           </td>
-          <td rowspan=2 align=center>
+          <td class="w3-orange" align=center>
             <div class="da">Morgenmad.	</div>
             <div class="en">Breakfast.	</div>
             <div class="de">Frühstück.	</div>
           </td>
-          <td align=center>
+          <td class="w3-orange" align=center>
             <div class="da">Middagsmad:	</div>
             <div class="en">Lunch:	</div>
             <div class="de">Mittagessen	</div>
           </td>
-          <td align=center>
+          <td class="w3-orange" align=center>
             <div class="da">Aftensmad:	</div>
             <div class="en">Dinner:	</div>
             <div class="de">Abendessen:	</div>
           </td>
         </tr><tr>
-          <td align=center>
-            <div class="da">	Grillen bliver startet op.	</div>
-            <div class="en">	The grill is fired up.		</div>
-            <div class="de">	Der Grill wird gestartet.	</div>
+          <td class="w3-orange">
+            <span class="da">Onsdag:</span>
+            <span class="en">Wednesday:</span>
+            <span class="de">Mitwoch:</span>
           </td>
-          <td align=center>
-            <div class="da">	Stegebuffet med salatbar	</div>
-            <div class="en">	Roast buffet with salad bar	</div>
-            <div class="de">	Bratenbuffet mit Salatbar	</div>
-          </td>
+          <td align=center><div class="food_no"></div></td>
+          <td align=center><div class="food_no"></div></td>
+          <td align=center><div class="grill"></div></td>
         </tr><tr>
-          <td>
+          <td class="w3-orange">
             <span class="da">Torsdag:</span>
             <span class="en">Thursday:</span>
             <span class="de">Donnerstag:</span>
           </td>
-          <td align=center><span class="food_no"></span></td>
-          <td align=center><span class="food_yes"></span></td>
-          <td align=center><span class="food_yes"></span></td>
+          <td align=center><div class="food_yes"></div></td>
+          <td align=center><div class="grill"></div></td>
+          <td align=center><div class="buffet"></div></td>
 <!--
           <td>
             <div class="da">Svinekølle helstegt som vildsvin,</div>
@@ -740,14 +745,14 @@ body {font-size:16px;}
           </td>
 -->
         </tr><tr>
-          <td>
+          <td class="w3-orange">
             <span class="da">Fredag:</span>
             <span class="en">Friday:</span>
             <span class="de">Freitag:</span>
           </td>
-          <td align=center><span class="food_yes"></span></td>
-          <td align=center><span class="food_yes"></span></td>
-          <td align=center><span class="food_yes"></span></td>
+          <td align=center><div class="food_yes"></div></td>
+          <td align=center><div class="grill"></div></td>
+          <td align=center><div class="buffet"></div></td>
 <!--
           <td>
             <div class="da">Mørstegt oksesteg med US-barbeque,</div>
@@ -767,14 +772,14 @@ body {font-size:16px;}
           </td>
 -->
         </tr><tr>
-          <td>
+          <td class="w3-orange">
             <span class="da">Lørdag:</span>
             <span class="en">Saturday:</span>
             <span class="de">Samstag:</span>
           </td>
-          <td align=center><span class="food_yes"></span></td>
-          <td align=center><span class="food_yes"></span></td>
-          <td align=center><span class="food_yes"></span></td>
+          <td align=center><div class="food_yes"></div></td>
+          <td align=center><div class="grill"></div></td>
+          <td align=center><div class="buffet"></div></td>
 <!--
           <td>
             <div class="da">Helstegt tyndstegsfilet,</div>
@@ -796,7 +801,7 @@ body {font-size:16px;}
             <div class="de">Gewürz-mariniertes Putenfilet.</div>
 -->
         </tr><tr>
-          <td>
+          <td class="w3-orange">
             <span class="da">Søndag:</span>
             <span class="en">Sunday:</span>
             <span class="de">Sontag:</span>
@@ -804,11 +809,11 @@ body {font-size:16px;}
           <td align=center><span class="food_yes"></span></td>
           <td align=center>
             <span class="food_yes"></span>
-            <span class="da">(Rester fra lørdag)</span>
-            <span class="en">(Whatever is left)</span>
-            <span class="de">(Was übrig geblieben ist)</span>
+            <span class="da">(Rester fra lørdag)	</span>
+            <span class="en">(Whatever is left)		</span>
+            <span class="de">(Was übrig geblieben ist)	</span>
           </td>
-          <td align=center><span class="food_no"></span></td>
+          <td align=center><div class="food_no"></div></td>
         </tr></table>
         <div class="da">Aften-buffeten er forskellig de tre dage,
 					men inkludere 2-3 forskellige slags kød,
@@ -819,6 +824,9 @@ body {font-size:16px;}
         <div class="de">Das Abendbuffet variirt an den drei Tagen,
 					aber beeinhaltet immer 2-3 verschiedene Fleischsorten,
 					verschiedene Salate und verschiedene Arten von Kartoffeln.</div>
+        <div class="da">Tilmelding kun til lørdag, indeholder kun forplejning nævnt i tilmeldingen nedenfor.</div>
+        <div class="en">Registration only for Saturday, includes only meals mentioned in the registration below.</div>
+        <div class="de">Die Registrierung nur für Samstag beinhaltet nur die in der Registrierung angegebenen Mahlzeiten.</div>
       </li>
       <li>
 		<span class="da">Overnatning i sovesal eller eget telt eller campingvogn.</span>
@@ -841,8 +849,6 @@ body {font-size:16px;}
       <div class="w3-row-padding">
         <!-- --------------------------------------------------------------------------- -->
         <hr>
-        <div class="w3-half person" id="person_1"></div>
-        <!-- --------------------------------------------------------------------------- -->
         <div class="w3-half">
           <div class="w3-section">
             <label class="da">Email <span title="Vi vil sende bekræftelse,
@@ -881,18 +887,40 @@ Nach dem Camp werden Sie nicht mehr von uns hören.">&#128712;</span></label>
             <input class="w3-input w3-border" type="text" name="home" />
           </div>
           <div class="w3-section">
-            <label class="da">Hvornår forventer I at ankomme til Ullerup?</label>
+       	    <div>
+               <input class="w3-checkbox w3-border" type="radio" id="full_camp" value="full_camp" name="length" onClick="update_prices(this);" checked	/>
+               <span class="da">Deltag i hele campen</span>
+               <span class="en">Join the entire camp</span>
+               <span class="de">Mach mit beim gesamten Camp</span>
+            </div>
+       	    <div>
+               <input class="w3-checkbox w3-border" type="radio" id="full_saturday" value="full_saturday" name="length" onClick="update_prices(this);"	/>
+               <span class="da">Deltag i campen hele lørdag (incl grill og buffet)</span>
+               <span class="en">Join the camp saturday morning (incl grill and buffet)</span>
+               <span class="de">Ab Samstagmorgen teilnehmen (incl grill und buffet)</span>
+            </div>
+       	    <div>
+               <input class="w3-checkbox w3-border" type="radio" id="saturday_afternoon" value="saturday_afternoon" name="length" onClick="update_prices(this);"	/>
+               <span class="da">Deltag lørdag eftermiddag og aften (incl buffet)</span>
+               <span class="en">Join the camp saturday afternoon and evening (incl buffet)</span>
+               <span class="de">Nur Samstag nachmittag und abend telnehmen (incl buffet)</span>
+            </div>
+          </div>
+          <div class="w3-section">
+            <label class="da">Hvornår forventer du at ankomme til Ullerup?</label>
             <label class="en">When do you expect to arrive in Ullerup?</label>
-            <label class="de">Wann plant Ihr in Ullerup anzukommen?</label>
+            <label class="de">Wann planen Sie in Ullerup anzukommen?</label>
             <input class="w3-input w3-border" type="text" name="ankomst"/>
           </div>
-          <div>
+          <div class="w3-section">
             <input class="w3-input w3-border cart_value" name="initial_payment" type="hidden" readonly />
  <!--
            <span class="cart_value_eur"></span>
 -->
           </div>
         </div>
+        <!-- --------------------------------------------------------------------------- -->
+        <div class="w3-half person" id="person_1"></div>
         <!-- --------------------------------------------------------------------------- -->
         <div class="w3-bar-block" id="open_2_3">
           <div onclick="display_2_3(); return false" class="w3-bar-item w3-button w3-red w3-hover-white" style="text-align:center">
@@ -968,6 +996,10 @@ Nach dem Camp werden Sie nicht mehr von uns hören.">&#128712;</span></label>
 <div class="w3-light-grey w3-container w3-padding-32" style="margin-top:75px;padding-right:58px"><p class="w3-right">Powered by <a href="https://www.w3schools.com/w3css/default.asp" title="W3.CSS" target="_blank" class="w3-hover-opacity">w3.css</a></p></div>
 
 <script>
+var s = window.location+"?";
+var a = s.split("?")[1];
+if (a == "da" || a == "en" || a == "de") { switch_to(a); }
+
 // Script to open and close sidebar
 function w3_open() {
   document.getElementById("mySidebar").style.display = "block";
@@ -1040,14 +1072,36 @@ function display_6_7() {
 
 function update_prices(obj) {
 	var id = obj.id.substr(0,8);
-	var age = obj.id.substr(9);
-	if (age == "adult")		{ slottet = pris_slottet_adult;		stjerne = pris_stjerne_adult;		}
-	if (age == "young")		{ slottet = pris_slottet_young;		stjerne = pris_stjerne_young;		}
-	if (age == "child")		{ slottet = pris_slottet_child;		stjerne = pris_stjerne_child;		}
-	if (age == "smallchild")	{ slottet = pris_slottet_smallchild;	stjerne = pris_stjerne_smallchild;	}
-	document.getElementById(id+"_slottet_pris").innerHTML = slottet;
-	document.getElementById(id+"_stjerne_pris").innerHTML = stjerne;
-//	alert(obj.id);
+	var x;
+	if (obj.id.substr(0,7) == "person_") {
+		var age = obj.id.substr(9);
+		if (age == "adult")		{ slottet = pris_slottet_adult;		stjerne = pris_stjerne_adult;		}
+		if (age == "young")		{ slottet = pris_slottet_young;		stjerne = pris_stjerne_young;		}
+		if (age == "child")		{ slottet = pris_slottet_child;		stjerne = pris_stjerne_child;		}
+		if (age == "smallchild")	{ slottet = pris_slottet_smallchild;	stjerne = pris_stjerne_smallchild;	}
+		document.getElementById(id+"_slottet_pris").innerHTML = slottet;
+		document.getElementById(id+"_stjerne_pris").innerHTML = stjerne;
+	} else if (obj.id == "full_camp") {
+		var pris_adult		= pris_camp_adult;
+		var pris_young		= pris_camp_young;
+		var pris_child		= pris_camp_child;
+		var pris_smallchild	= pris_camp_smallchild;
+	} else if (obj.id == "full_saturday") {
+		var pris_adult		= pris_saturday_grill_and_buffet_adult;
+		var pris_young		= pris_saturday_grill_and_buffet_young;
+		var pris_child		= pris_saturday_grill_and_buffet_child;
+		var pris_smallchild	= pris_saturday_grill_and_buffet_smallchild;
+	} else if (obj.id == "saturday_afternoon") {
+		var pris_adult		= pris_saturday_buffet_only_adult;
+		var pris_young		= pris_saturday_buffet_only_young;
+		var pris_child		= pris_saturday_buffet_only_child;
+		var pris_smallchild	= pris_saturday_buffet_only_smallchild;
+	}
+	x = document.getElementsByClassName("pris_camp_adult");		for (i = 0; i < x.length; i++) { x[i].innerHTML = pris_adult;	}
+	x = document.getElementsByClassName("pris_camp_young");		for (i = 0; i < x.length; i++) { x[i].innerHTML = pris_young;	}
+	x = document.getElementsByClassName("pris_camp_child");		for (i = 0; i < x.length; i++) { x[i].innerHTML = pris_child;	}
+	x = document.getElementsByClassName("pris_camp_smallchild");	for (i = 0; i < x.length; i++) { x[i].innerHTML = pris_smallchild; }
+
 	recalc();
 }
 
@@ -1058,11 +1112,29 @@ function recalc() {
 		var id = x[i].id.substr(0,8)
 		var name = id+"_name";
 		name = document.getElementById(name);
+
+		if (document.getElementById("full_camp").checked) {
+			var pris_adult		= pris_camp_adult;
+			var pris_young		= pris_camp_young;
+			var pris_child		= pris_camp_child;
+			var pris_smallchild	= pris_camp_smallchild;
+		} else if (document.getElementById("full_saturday").checked) {
+			var pris_adult		= pris_saturday_grill_and_buffet_adult;
+			var pris_young		= pris_saturday_grill_and_buffet_young;
+			var pris_child		= pris_saturday_grill_and_buffet_child;
+			var pris_smallchild	= pris_saturday_grill_and_buffet_smallchild;
+		} else if (document.getElementById("saturday_afternoon").checked) {
+			var pris_adult		= pris_saturday_buffet_only_adult;
+			var pris_young		= pris_saturday_buffet_only_young;
+			var pris_child		= pris_saturday_buffet_only_child;
+			var pris_smallchild	= pris_saturday_buffet_only_smallchild;
+		}
+
 		if (name.value == "")				{							} else 
-		if (x[i].id.substr(9) == "adult"	) { if (x[i].checked)		sum += pris_camp_adult;		} else
-		if (x[i].id.substr(9) == "young"	) { if (x[i].checked)		sum += pris_camp_young;		} else
-		if (x[i].id.substr(9) == "child"	) { if (x[i].checked)		sum += pris_camp_child;		} else
-		if (x[i].id.substr(9) == "smallchild"	) { if (x[i].checked)		sum += pris_camp_smallchild;	} else
+		if (x[i].id.substr(9) == "adult"	) { if (x[i].checked)		sum += pris_adult;		} else
+		if (x[i].id.substr(9) == "young"	) { if (x[i].checked)		sum += pris_young;		} else
+		if (x[i].id.substr(9) == "child"	) { if (x[i].checked)		sum += pris_child;		} else
+		if (x[i].id.substr(9) == "smallchild"	) { if (x[i].checked)		sum += pris_smallchild;		} else
 		if (x[i].id.substr(9) == "slottet"	) { if (x[i].checked)	{
 			if (document.getElementById(id+"_adult")	.checked)	sum += pris_slottet_adult;
 			if (document.getElementById(id+"_young")	.checked)	sum += pris_slottet_young;
@@ -1251,6 +1323,10 @@ x = document.getElementsByClassName("middagsmad"); for (i = 0; i < x.length; i++
 						"<span class='da'>Middagsmad fra grillen</span>"+
 						"<span class='en'>Lunch from the grillen</span>"+
 						"<span class='de'>Mittagessen vom Grill</span>";
+x = document.getElementsByClassName("grill"); for (i = 0; i < x.length; i++)
+	x[i].innerHTML =	"<div class='da'>	Grillen bliver startet op.	</div>"+
+				"<div class='en'>	The grill is fired up.		</div>"+
+				"<div class='de'>	Der Grill wird angemacht.	</div>";
 x = document.getElementsByClassName("aften"); for (i = 0; i < x.length; i++)
 	x[i].innerHTML =	"<span class='da'>Aften</span>"+
 				"<span class='en'>Evening</span>"+
@@ -1261,6 +1337,11 @@ x = document.getElementsByClassName("aftensmad"); for (i = 0; i < x.length; i++)
 						"<span class='en'>Dinner</span>"+
 						"<span class='de'>Abendessen</span>"+
 											" (Buffet)";
+x = document.getElementsByClassName("buffet"); for (i = 0; i < x.length; i++)
+	x[i].innerHTML =	"<div class='da'>	Stegebuffet med salatbar	</div>"+
+				"<div class='en'>	Roast buffet with salad bar	</div>"+
+				"<div class='de'>	Bratenbuffet mit Salatbar	</div>";
+
 
 name_change(document.getElementById("person_1_name"));
 </script>
