@@ -100,6 +100,11 @@ setmarker([	osm_1283223113,osm_1283223207,osm_6336132890	],
 								'green',	'Area for caravans etc');
 osmap.fitBounds(fitBounds);
 
+L.marker([54.90690,9.78457]).addTo(osmap).bindPopup("Sønderborg Slot		<br/>	Sønderbro 1a		<br/>	6400 Sønderborg	");
+L.marker([54.90668,9.75329]).addTo(osmap).bindPopup("1846 / Dybbøl Banke	<br/>	Flensborg Landevej 16	<br/>	6400 Sønderborg	");
+L.marker([55.04095,9.80914]).addTo(osmap).bindPopup("Universe			<br/>	Mads Patent Vej 1	<br/>	6430 Nordborg	");
+L.marker([55.02855,9.71441]).addTo(osmap).bindPopup("Mjels Bryghus		<br/>	Nedervej 10, Mjels	<br/>	6430 Nordborg	");
+
 L.marker([48.783, 10.490]).addTo(osmap).bindPopup("2000 Karlshof (D)");
 L.marker([48.784, 10.491]).addTo(osmap).bindPopup("2001 Karlshof (D)");
 L.marker([54.780, 9.397]).addTo(osmap).bindPopup("2002 Flensburg (D)");
@@ -119,4 +124,5 @@ L.marker([51.033, 7.650]).addTo(osmap).bindPopup("2015 Bergneustadt (D)");
 L.marker([49.133, 8.600]).addTo(osmap).bindPopup("2016 Bruchsal (D)");
 L.marker([54.630, 8.983]).addTo(osmap).bindPopup("2017 Bredstedt (D)");
 L.marker([51.102, 7.012]).addTo(osmap).bindPopup("2018 Leichlingen (D)");
-//L.marker([            ]).addTo(osmap).bindPopup("2019 Ullerup (DK)");
+L.marker([54.964, 9.655]).addTo(osmap).bindPopup("2019 Ullerup (DK)");
+//54.96380/9.65493
