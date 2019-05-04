@@ -29,7 +29,6 @@ body {font-size:16px;}
 .lugcamp:after	{ content:"(.de)"; font-size:66%; }
 .sponsor	{ border:10px solid gray; padding:10px; margin-bottom:10px; }
 .food_no	{ background:silver;	}
-
 </style>
 <script src="https://lugcamp.alslug.dk/jquery.min.js"></script>
 <body>
@@ -54,7 +53,7 @@ body {font-size:16px;}
     <a href="#program" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">
 	<span class="da">Program</span>
 	<span class="en">Schedule</span>
-	<span class="de">Progam</span>
+	<span class="de">Program</span>
     </a> 
     <a href="#sponsors" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">
 	<span class="da">Sponsorer</span>
@@ -157,7 +156,7 @@ body {font-size:16px;}
       <li class="en">Meeting-room for presentations etc in the space of <a target='_blank' href='https://www.alslug.dk'>AlsLUG</a>.</li>
       <li class="de">Besprechungsraum für Präsentationen usw. im Raum der <a target='_blank' href='https://www.alslug.dk'>AlsLUG</a>.</li>
 
-      <li class="da">Mulighed for overnatning i det gamle bibliotek og i gymnastiksalen..</li>
+      <li class="da">Mulighed for overnatning i det gamle bibliotek og i gymnastiksalen.</li>
       <li class="en">Possibility of accommodation in the old library and the gym.</li>
       <li class="de">Möglichkeit der Unterbringung in der alten Bibliothek und ind der Gymnastikhalle.</li>
 
@@ -241,7 +240,7 @@ body {font-size:16px;}
   <div class="w3-container" id="program" sty_le="margin-top:75px">
     <h1 class="w3-xxxlarge w3-text-red"><b>
 	<span class="da">Program</span>
-	<span class="en">Program</span>
+	<span class="en">Schedule</span>
 	<span class="de">Program</span>
     </b></h1>
     <hr style="width:50px;border:5px solid red" class="w3-round">
@@ -260,65 +259,56 @@ body {font-size:16px;}
       <p><span class="w3-text-gray">Grauer Text</span> ist Aktivitäten,
 					die noch nicht sicher sind oder die Zeit für einzelne Aktivitäten andeuten.</p>
     </div>
-    <div class="w3-row-padding w3-center w3-red">
-       <span class="da">Onsdag</span>
-       <span class="en">Wednesday</span>
-       <span class="de">Mittwoch</span>
-    </div>
+    <div class="w3-row-padding w3-center w3-red wedensday"></div>
     <div class="w3-row-padding">
       <div class="w3-third">
         &nbsp;
       </div>
       <div class="w3-third">
-        <div class="w3-orange eftermiddag"></div>
+        <div class="w3-row-padding w3-orange eftermiddag"></div>
         <p class="ankomst"></p>
         <p class="opstilling"></p>
       </div>
       <div class="w3-third">
-        <div class="w3-orange aften"></div>
+        <div class="w3-row-padding w3-orange aften"></div>
         <p>19:00-ish	<span class="da"> Aftensmad.</span>
 			<span class="en"> Dinner.</span>
 			<span class="de"> Abendessen.</span></p>
         <p class="ankomst"></p>
         <p class="opstilling"></p>
-      </div>
-    </div>
-    <div class="w3-row-padding w3-center w3-red">
-       <span class="da">Torsdag</span>
-       <span class="en">Thursday</span>
-       <span class="de">Donnerstag</span>
-    </div>
+      </div>    </div>
+    <div class="w3-row-padding w3-center w3-red thursday"></div>
     <div class="w3-row-padding">
       <div class="w3-third">
-        <div class="w3-orange morgen"></div>
+        <div class="w3-row-padding w3-orange morgen"></div>
         <p class="morgenmad"></p>
         <p class="ankomst"></p>
       </div>
       <div class="w3-third">
-        <div class="w3-orange eftermiddag"></div>
+        <div class="w3-row-padding w3-orange eftermiddag"></div>
         <p class="middagsmad"</p>
         <p class="ankomst"></p>
       </div>
       <div class="w3-third">
-        <div class="w3-orange aften"></div>
+        <div class="w3-row-padding w3-orange aften"></div>
         <p class="aftensmad"></p>
-        <p class="w3-lime">19:30-21:00 Some workshop?</p>
-        <p class="w3-lime">21:30-23:00 Some workshop?</p>
+        <p> 19:00-xx:xx
+          <span class="da">Der er mulighed for at få et kig indenfor hos vores nabo-forening, </span>
+          <span class="en">There is the opportunity to have a look inside at our neighboring club,</span>
+          <span class="de">Es besteht die Möglichkeit, einen Blick in unseren Nachbarverein zu werfen,</span>
+					<a target='_blank' href='https://alssundakvarieforening.dk/'>Alssund Akvarieforening</a>
+        </p>
       </div>
     </div>
-    <div class="w3-row-padding w3-center w3-red">
-       <span class="da">Fredag</span>
-       <span class="en">Friday</span>
-       <span class="de">Freitag</span>
-    </div>
+    <div class="w3-row-padding w3-center w3-red friday"></div>
     <div class="w3-row-padding">
       <div class="w3-third">
-        <div class="w3-orange morgen"></div>
+        <div class="w3-row-padding w3-orange morgen"></div>
         <p class="morgenmad"></p>
         <p class="w3-lime">10:00-11:30 Some workshop?</p>
       </div>
       <div class="w3-third">
-        <div class="w3-orange eftermiddag"></div>
+        <div class="w3-row-padding w3-orange eftermiddag"></div>
         <p class="middagsmad"</p>
         <p>12:40
           <span class="da">Afgang til</span>
@@ -340,7 +330,7 @@ body {font-size:16px;}
         </p>
       </div>
       <div class="w3-third">
-        <div class="w3-orange aften"></div>
+        <div class="w3-row-padding w3-orange aften"></div>
         <p class="aftensmad"></p>
         <p>19:30-xx:xx 
           <span class="da">Attilas Skærslipper worksshop</span>
@@ -350,19 +340,15 @@ body {font-size:16px;}
         <p class="w3-lime" style="display:none">21:30-23:00 Some workshop?</p>
       </div>
     </div>
-    <div class="w3-row-padding w3-center w3-red">
-       <span class="da">Lørdag</span>
-       <span class="en">Saturday</span>
-       <span class="de">Samstag</span>
-    </div>
+    <div class="w3-row-padding w3-center w3-red saturday"></div>
     <div class="w3-row-padding">
       <div class="w3-third">
-        <div class="w3-orange morgen"></div>
+        <div class="w3-row-padding w3-orange morgen"></div>
         <p class="morgenmad"></p>
         <p class="w3-lime">10:00-11:30 Some workshop?</p>
       </div>
       <div class="w3-third">
-        <div class="w3-orange eftermiddag"></div>
+        <div class="w3-row-padding w3-orange eftermiddag"></div>
         <p class="middagsmad"</p>
         <p>13:00-17:00 Åbent hus for eksterne besøgende</p>
         <p class="w3-text-gray">13:00-17:00 &#128176;
@@ -372,26 +358,22 @@ body {font-size:16px;}
         </p>
       </div>
       <div class="w3-third">
-        <div class="w3-orange aften"></div>
+        <div class="w3-row-padding w3-orange aften"></div>
         <p class="aftensmad"></p>
         <p class="w3-lime">19:30-21:00 Some workshop?</p>
         <p class="w3-lime">21:30-23:00 Some workshop?</p>
       </div>
     </div>
-    <div class="w3-row-padding w3-center w3-red">
-       <span class="da">Søndag</span>
-       <span class="en">Sunday</span>
-       <span class="de">Sonntag</span>
-    </div>
+    <div class="w3-row-padding w3-center w3-red sunday"></div>
     <div class="w3-row-padding">
       <div class="w3-third">
-        <div class="w3-orange morgen"></div>
+        <div class="w3-row-padding w3-orange morgen"></div>
         <p class="morgenmad"></p>
         <p class=''>10:00-10:30 Evaluation.</p>
         <p class="oprydning"></p>
       </div>
       <div class="w3-third">
-        <div class="w3-orange eftermiddag"></div>
+        <div class="w3-row-padding w3-orange eftermiddag"></div>
         <p class="middagsmad"</p>
         <p class="oprydning"></p>
         <p>	<span class="da">Afrejse</span>
@@ -401,6 +383,198 @@ body {font-size:16px;}
       </div>
       <div class="w3-third">
       </div>
+    </div>
+
+
+
+
+
+    <h1 class="w3-xxxlarge w3-text-red" id="buffet"><b>
+	<span class="da">Buffet menu (aftensmad)</span>
+	<span class="en">Buffet menu (dinner)</span>
+	<span class="de">Buffet menu (abendessen)</span>
+    </b></h1>
+    <hr style="width:50px;border:5px solid red" class="w3-round">
+
+    <div class="w3-row-padding en">
+      The menus in english has been translated by Google.
+      Accuracy is not garantied.
+      Please check the danish or german translations.
+    </div>
+    <div class="w3-row-padding w3-center w3-red thursday"></div>
+    <div class="w3-row-padding">
+      <div class="w3-third">
+        <div class="w3-row-padding w3-orange buffet_koed"></div>
+        <ul class="da">
+          <li>Svinekølle helstegt som vildsvin</li>
+          <li>Mør oksesteg glaseret med kraftfuld smag</li>
+          <li>Saftig kryddermarineret kalkunbryst</li>
+        </ul>
+        <ul class="en">
+          <li>Pork roasted as wild boar</li>
+          <li>tender roast beef glazed with powerful flavor</li>
+          <li>Juicy spice marinated turkey breast</li>
+        </ul>
+        <ul class="de">
+          <li>Schweinebraten</li>
+          <li>Glasierter Rinderbraten</li>
+          <li>Saftig, marinierte Putenbrust</li>
+        </ul>
+      </div>
+      <div class="w3-third">
+        <div class="w3-row-padding w3-orange buffet_tilbehoer"></div>
+        <ul class="da">
+          <li>6 slags af årstidens salater og grønsager</li>
+          <li>2 slags dressing</li>
+          <li>Hjemmelavet kold kartoffelsalat</li>
+          <li>Flødeporrekartofler</li>
+        </ul>
+        <ul class="en">
+          <li>6 kinds of seasonal salads and vegetables</li>
+          <li>2 different dressing</li>
+          <li>Homemade cold potato salad</li>
+          <li>Cream leek potatoes</li>
+        </ul>
+        <ul class="de mangler">
+          <li>6 Sorten Salate und Gemüse</li>
+          <li>2 Sorten Dressing</li>
+          <li>Hausgemachter kalter Kartoffelsalat</li>
+          <li>Gratinierte Kartoffeln</li>
+        </ul>
+      </div>
+      <div class="w3-third">
+        <div class="w3-row-padding w3-orange buffet_vegetar"></div>
+        <ul class="da mangler">
+          <li>Vegetartærter</li>
+        </ul>
+        <ul class="en mangler">
+          <li>Vegetarian tart</li>
+        </ul>
+        <ul class="de mangler">
+          <li>Vegetartörtchen</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="w3-row-padding w3-center w3-red friday"></div>
+    <div class="w3-row-padding">
+      <div class="w3-third">
+        <div class="w3-row-padding w3-orange buffet_koed"></div>
+        <ul class="da">
+          <li>Mørstegt oksesteg med US-barbeque</li>
+          <li>Saftig kalkunfilet med indisk karry og ananas</li>
+          <li>Kyllingelår krydret som i Spanien</li>
+          <li>Hjemmelavede frikadeller</li>
+        </ul>
+        <ul class="en">
+          <li>Roast beef with US barbeque</li>
+          <li>Juicy turkey fillet with Indian curry and pineapple</li>
+          <li>Chicken leg spiced as in Spain</li>
+          <li>Homemade meatballs</li>
+        </ul>
+        <ul class="de">
+          <li>Rinderbraten mit US-barbeque</li>
+          <li>Putenbrust mit indischem Curry und Ananas</li>
+          <li>Hähnchenschenkel wie in Spanien gewürzt</li>
+          <li>Hausgemachte Frikadellen</li>
+        </ul>
+      </div>
+      <div class="w3-third">
+        <div class="w3-row-padding w3-orange buffet_tilbehoer"></div>
+        <ul class="da">
+          <li>Stor salatbar med mixed salat</li>
+          <li>Amerikansk coleslaw med snittet hvidkål, gulerod i strimler og rosiner</li>
+          <li>Dansk hjemmelavet kartoffelsalat, oliven, feta og provence croutons</li>
+          <li>Italienske flødekartofler med tomat og bacon</li>
+          <li>2 slags dressing</li>
+        </ul>
+        <ul class="en">
+          <li>Large salad bar with mixed salad</li>
+          <li>American coleslaw with sliced cabbage, carrot in strips and raisins</li>
+          <li>Danish homemade potato salad, olives, feta and provence croutons</li>
+          <li>Italian cream potatoes with tomato and bacon</li>
+          <li>2 kinds of dressing</li>
+        </ul>
+        <ul class="de">
+          <li>Salatbar mit gemischtem Salat</li>
+          <li>Amerikanischer Krautsalat mit geschnittenem Kohl, Karotten in Streifen und Rosinen</li>
+          <li>Dänischer hausgemachter Kartoffelsalat, Oliven, Feta und Croutons der Provence</li>
+          <li>Italienische gratinierte kartoffeln mit Tomate und Speck</li>
+          <li>Dressing</li>
+        </ul>
+      </div>
+      <div class="w3-third">
+        <div class="w3-row-padding w3-orange buffet_vegetar"></div>
+        <ul class="da">
+          <li>Vegetarschnitzel</li>
+        </ul>
+        <ul class="en">
+          <li>Vegetarian schnitzel</li>
+        </ul>
+        <ul class="de">
+          <li>Vegetarisches Schnitzel</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="w3-row-padding w3-center w3-red saturday"></div>
+    <div class="w3-row-padding">
+      <div class="w3-third">
+        <div class="w3-row-padding w3-orange buffet_koed"></div>
+        <ul class="da">
+          <li>Helstegt tyndstegsfilet</li>
+          <li>Glaseret skinke</li>
+          <li>Stegt kyllingelår</li>
+          <li>Helstegt nakkefilet basilikum</li>
+          <li>Kryddermarineret kalkunfilet</li>
+        </ul>
+        <ul class="en">
+          <li>Roasted thin fillet</li>
+          <li>Glazed ham</li>
+          <li>Fried chicken leg</li>
+          <li>Basil fillet</li>
+          <li>Spice marinated turkey fillet</li>
+        </ul>
+        <ul class="de">
+          <li>Rumpsteak im ganzen gebraten</li>
+          <li>Glasierter Schinken</li>
+          <li>Gebratene Hähnchenschenkel</li>
+          <li>Basilikum-marinierter Nackenstaek</li>
+          <li>Marinierte Putenbrust</li>
+        </ul>
+      </div>
+      <div class="w3-third">
+        <div class="w3-row-padding w3-orange buffet_tilbehoer"></div>
+        <ul class="da">
+          <li>Bulgursalat</li>
+          <li>Paprika-majs-salat</li>
+          <li>Rødbede-æblesalat</li>
+          <li>Mixed salat  med dressing</li>
+          <li>Flødeporrekartofler</li>
+          <li>Fransk baguette</li>
+        </ul>
+        <ul class="en">
+          <li>Bulgur salad</li>
+          <li>Paprika-corn salad</li>
+          <li>Beetroot apple salad</li>
+          <li>Mixed salat with dressing</li>
+          <li>Cream leek potatoes</li>
+          <li>French baguette</li>
+        </ul>
+        <ul class="de mangler">
+          <li>Bulgursalat</li>
+          <li>Paprika-Mais-Salat</li>
+          <li>Rote-Bete-Apfel-Salat</li>
+          <li>Gemischter Salat mit Dressing</li>
+          <li>Gratinierte Kartoffeln</li>
+          <li>Französisches Baguette</li>
+        </ul>
+      </div>
+      <div class="w3-third">
+        <div class="w3-row-padding w3-orange buffet_vegetar"></div>
+        <ul>
+          <li>Falafel</li>
+        </ul>
     </div>
   </div>
 
@@ -427,14 +601,6 @@ body {font-size:16px;}
           <div class="en">Mjels Bryghus delivers different specialty beer to our kiosk.</div>
           <div class="de">Mjels Bryghus liefert verschiedene Spezialbiere an unseren Kiosk.</div>
         </div>
-<!--
-        <div class="sponsor">
-          <a href="http://minkøbmand.dk/butik/min-koebmand-blans" target="_blank"><img src="minkobmand-logo.png" width="100%"/></a>
-          <div class="da"></div>
-          <div class="en"></div>
-          <div class="de"></div>
-        </div>
--->
       </div>
       <div class="w3-half">
         <div class="sponsor">
@@ -451,6 +617,14 @@ body {font-size:16px;}
           <div class="en">We rent a cooling trailer as an extra refrigerator at a very good price</div>
           <div class="de">Wir mieten einen Kühlanhänger bei Als Jægerne als extra Kühlschrank zu einem sehr guten Preis.</div>
         </div>
+<!--
+        <div class="sponsor">
+          <a href="http://minkøbmand.dk/butik/min-koebmand-blans" target="_blank"><img src="minkobmand-logo.png" width="100%"/></a>
+          <div class="da"></div>
+          <div class="en"></div>
+          <div class="de"></div>
+        </div>
+-->
       </div>
     </div>
     <div id="oreilly-note">
@@ -720,100 +894,27 @@ body {font-size:16px;}
             <div class="de">Abendessen:	</div>
           </td>
         </tr><tr>
-          <td class="w3-orange">
-            <span class="da">Onsdag:</span>
-            <span class="en">Wednesday:</span>
-            <span class="de">Mitwoch:</span>
-          </td>
+          <td class="w3-orange wedensday"></td>
           <td align=center><div class="food_no"></div></td>
           <td align=center><div class="food_no"></div></td>
           <td align=center><div class="grill"></div></td>
         </tr><tr>
-          <td class="w3-orange">
-            <span class="da">Torsdag:</span>
-            <span class="en">Thursday:</span>
-            <span class="de">Donnerstag:</span>
-          </td>
+          <td class="w3-orange thursday"></td>
           <td align=center><div class="food_yes"></div></td>
           <td align=center><div class="grill"></div></td>
           <td align=center><div class="buffet"></div></td>
-<!--
-          <td>
-            <div class="da">Svinekølle helstegt som vildsvin,</div>
-            <div class="da">mør oksesteg glaseret med kraftfuld smag</div>
-            <div class="da">og saftig kryddermarineret kalkunbryst.</div>
-
-            <div class="en">Pork roasted as wild boar,</div>
-            <div class="en">tender roast beef glazed with powerful flavor</div>
-            <div class="en">and juicy spice marinated turkey breast.</div>
-
-            <div class="de">Schweinefleisch gebraten wie Wildschwein,</div>
-            <div class="de">zartes Roastbeef mit kräftigem Geschmack</div>
-            <div class="de">und saftige Gewürz marinierte Putenbrust.</div>
-          </td>
--->
         </tr><tr>
-          <td class="w3-orange">
-            <span class="da">Fredag:</span>
-            <span class="en">Friday:</span>
-            <span class="de">Freitag:</span>
-          </td>
+          <td class="w3-orange friday"></td>
           <td align=center><div class="food_yes"></div></td>
           <td align=center><div class="grill"></div></td>
           <td align=center><div class="buffet"></div></td>
-<!--
-          <td>
-            <div class="da">Mørstegt oksesteg med US-barbeque,</div>
-            <div class="da">saftig kalkunfilet med indisk karry og ananas,</div>
-            <div class="da">kyllingelår krydret som i Spanien,</div>
-            <div class="da">hjemmelavede frikadeller.</div>
-
-            <div class="en">Roast beef with US barbeque,</div>
-            <div class="en">juicy turkey fillet with Indian curry and pineapple,</div>
-            <div class="en">chicken leg spiced as in Spain,</div>
-            <div class="en">homemade meatballs.</div>
-
-            <div class="de">Roastbeef mit US-barbeque,</div>
-            <div class="de">saftiges Putenfilet mit indischem Curry und Ananas,</div>
-            <div class="de">Hühnerkeule gewürzt wie in Spanien,</div>
-            <div class="de">hausgemachte Frikadellen.</div>
-          </td>
--->
         </tr><tr>
-          <td class="w3-orange">
-            <span class="da">Lørdag:</span>
-            <span class="en">Saturday:</span>
-            <span class="de">Samstag:</span>
-          </td>
+          <td class="w3-orange saturday"></td>
           <td align=center><div class="food_yes"></div></td>
           <td align=center><div class="grill"></div></td>
           <td align=center><div class="buffet"></div></td>
-<!--
-          <td>
-            <div class="da">Helstegt tyndstegsfilet,</div>
-            <div class="da">glaseret skinke,</div>
-            <div class="da">stegt kyllingelår,</div>
-            <div class="da">helstegt nakkefilet basilikum,</div>
-            <div class="da">kryddermarineret kalkunfilet.</div>
-
-            <div class="en">Roasted thin fillet,</div>
-            <div class="en">glazed ham,</div>
-            <div class="en">fried chicken leg,</div>
-            <div class="en">basil fillet,</div>
-            <div class="en">spice marinated turkey fillet.</div>
-
-            <div class="de">Geröstetes dünnes Filet,</div>
-            <div class="de">glasierter Schinken,</div>
-            <div class="de">gebratene Hähnchenschenkel,</div>
-            <div class="de">Basilikumfilet,</div>
-            <div class="de">Gewürz-mariniertes Putenfilet.</div>
--->
         </tr><tr>
-          <td class="w3-orange">
-            <span class="da">Søndag:</span>
-            <span class="en">Sunday:</span>
-            <span class="de">Sontag:</span>
-          </td>
+          <td class="w3-orange sunday"></td>
           <td align=center><span class="food_yes"></span></td>
           <td align=center>
             <span class="food_yes"></span>
@@ -825,13 +926,16 @@ body {font-size:16px;}
         </tr></table>
         <div class="da">Aften-buffeten er forskellig de tre dage,
 					men inkludere 2-3 forskellige slags kød,
-					forskellige salater og flere slags kartofler.</div>
-        <div class="en">The evening buffet is different for the three days,
+					forskellige salater og flere slags kartofler.
+					Detaljer ses <a href='#buffet'>her</a>.</div>
+        <div class="en">Details on the evening buffet is different for the three days,
 					but include 2-3 different kinds of meat,
-					various salads and several kinds of potatoes.</div>
+					various salads and several kinds of potatoes.
+					Details can be found <a href='#buffet'>here</a>.</div>
         <div class="de">Das Abendbuffet variirt an den drei Tagen,
 					aber beeinhaltet immer 2-3 verschiedene Fleischsorten,
-					verschiedene Salate und verschiedene Arten von Kartoffeln.</div>
+					verschiedene Salate und verschiedene Arten von Kartoffeln.
+					Details finden Sie <a href='#buffet'>hier</a>.</div>
         <div class="da">Tilmelding kun til lørdag, indeholder kun forplejning nævnt i tilmeldingen nedenfor.</div>
         <div class="en">Registration only for Saturday, includes only meals mentioned in the registration below.</div>
         <div class="de">Die Registrierung nur für Samstag beinhaltet nur die in der Registrierung angegebenen Mahlzeiten.</div>
@@ -1325,7 +1429,8 @@ x = document.getElementsByClassName("morgenmad"); for (i = 0; i < x.length; i++)
 x = document.getElementsByClassName("eftermiddag"); for (i = 0; i < x.length; i++)
 	x[i].innerHTML =	"<span class='da'>Eftermiddag</span>"+
 				"<span class='en'>Afternoon</span>"+
-				"<span class='de'>Nachmittag</span>"+	":";
+				"<span class='de'>Nachmittag</span>"+
+				":";
 x = document.getElementsByClassName("middagsmad"); for (i = 0; i < x.length; i++)
 	x[i].innerHTML =	"11:30-13:00 "+
 						"<span class='da'>Middagsmad fra grillen</span>"+
@@ -1344,12 +1449,49 @@ x = document.getElementsByClassName("aftensmad"); for (i = 0; i < x.length; i++)
 						"<span class='da'>Aftensmad</span>"+
 						"<span class='en'>Dinner</span>"+
 						"<span class='de'>Abendessen</span>"+
-											" (Buffet)";
+											" <a href='#buffet'>(Buffet)</a>";
 x = document.getElementsByClassName("buffet"); for (i = 0; i < x.length; i++)
-	x[i].innerHTML =	"<div class='da'>	Stegebuffet med salatbar	</div>"+
-				"<div class='en'>	Roast buffet with salad bar	</div>"+
-				"<div class='de'>	Bratenbuffet mit Salatbar	</div>";
+	x[i].innerHTML =	"<a href='#buffet'>"+
+					"<div class='da'>	Stegebuffet med salatbar	</div>"+
+					"<div class='en'>	Roast buffet with salad bar	</div>"+
+					"<div class='de'>	Bratenbuffet mit Salatbar	</div>"+
+				"</a>";
 
+
+x = document.getElementsByClassName("wedensday"); for (i = 0; i < x.length; i++)
+	x[i].innerHTML =	"<span class='da'>	Onsdag		</span>"+
+				"<span class='en'>	Wednesday	</span>"+
+				"<span class='de'>	Mittwoch	</span>";
+x = document.getElementsByClassName("thursday"); for (i = 0; i < x.length; i++)
+	x[i].innerHTML =	"<span class='da'>	Torsdag		</span>"+
+				"<span class='en'>	Thursday	</span>"+
+				"<span class='de'>	Donnerstag	</span>";
+x = document.getElementsByClassName("friday"); for (i = 0; i < x.length; i++)
+	x[i].innerHTML =	"<span class='da'>	Fredag		</span>"+
+				"<span class='en'>	Friday		</span>"+
+				"<span class='de'>	Freitag		</span>";
+x = document.getElementsByClassName("saturday"); for (i = 0; i < x.length; i++)
+	x[i].innerHTML =	"<span class='da'>	Lørdag		</span>"+
+				"<span class='en'>	Saturday	</span>"+
+				"<span class='de'>	Samstag		</span>";
+x = document.getElementsByClassName("sunday"); for (i = 0; i < x.length; i++)
+	x[i].innerHTML =	"<span class='da'>Søndag</span>"+
+				"<span class='en'>Sunday</span>"+
+				"<span class='de'>Sonntag</span>";
+
+
+x = document.getElementsByClassName("buffet_koed"); for (i = 0; i < x.length; i++)
+	x[i].innerHTML =	"<span class='da'>	Kød:			</span>"+
+				"<span class='en'>	Meat:			</span>"+
+				"<span class='de'>	Fleish:			</span>";
+x = document.getElementsByClassName("buffet_tilbehoer"); for (i = 0; i < x.length; i++)
+	x[i].innerHTML =	"<span class='da'>	Tilbehør:		</span>"+
+				"<span class='en'>	Side dishes:		</span>"+
+				"<span class='de'>	Beilagen:		</span>";
+x = document.getElementsByClassName("buffet_vegetar"); for (i = 0; i < x.length; i++)
+	x[i].innerHTML =	"<span class='da'>	For vegetarerne:	</span>"+
+				"<span class='en'>	For the vegetarians:	</span>"+
+				"<span class='de'>	Für die Vegetarier:	</span>";
 
 name_change(document.getElementById("person_1_name"));
 </script>
