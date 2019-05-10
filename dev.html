@@ -29,6 +29,10 @@ body {font-size:16px;}
 .lugcamp:after	{ content:"(.de)"; font-size:66%; }
 .sponsor	{ border:10px solid gray; padding:10px; margin-bottom:10px; }
 .food_no	{ background:silver;	}
+.who:before				{ content:" ( Presented by ";	}
+.who:before,.who,.who:after		{ color:brown;			}
+.who:after				{ content:" )";			}
+
 </style>
 <script src="https://lugcamp.alslug.dk/jquery.min.js"></script>
 <body>
@@ -305,12 +309,17 @@ body {font-size:16px;}
       <div class="w3-third">
         <div class="w3-row-padding w3-orange morgen"></div>
         <p class="morgenmad"></p>
-        <p class="w3-lime">10:00-11:30 Some workshop?</p>
+	<p> 10:00-13:30:
+          <span class="da">Blender 3D Workshop for begyndere.</span>
+          <span class="en">Blender 3D Workshop for beginners.</span>
+          <span class="de">Blender 3D Workshop für Anfänger.</span>
+          <span class="who">Daniela - Sofakitty</span>
+        </p>
       </div>
       <div class="w3-third">
         <div class="w3-row-padding w3-orange eftermiddag"></div>
         <p class="middagsmad"</p>
-        <p>12:40
+        <p> 12:30
           <span class="da">Afgang til</span>
           <span class="en">Departure for</span>
           <span class="de">Abfart nach</span>
@@ -333,9 +342,10 @@ body {font-size:16px;}
         <div class="w3-row-padding w3-orange aften"></div>
         <p class="aftensmad"></p>
         <p>19:30-xx:xx 
-          <span class="da">Attilas Skærslipper worksshop</span>
-          <span class="en">Attilas Knife sharpening workshop</span>
-          <span class="de">Attilas Knife sharpening workshop</span>
+          <span class="da">Skærslipper worksshop</span>
+          <span class="en">Knife sharpening workshop</span>
+          <span class="de">Knife sharpening workshop</span>
+          <span class="who">Attila</span>
         </p>
         <p class="w3-lime" style="display:none">21:30-23:00 Some workshop?</p>
       </div>
@@ -1098,6 +1108,17 @@ Nach dem Camp werden Sie nicht mehr von uns hören.">&#128712;</span></label>
 							but expect to get the answer in danish or english.</div>
       <div class="de">Bitte schreiben Sie auf Englisch, Deutsch oder Dänisch,
 							erwarten Sie jedoch Antworten auf Dänisch oder Englisch.</div>
+      
+      <div>
+       	<span class="da">Hvis du vil følge deltagerne bag LugCamp.de, kan du tilmelde dig </span>
+        <span class="en">If you want to follow the community behind LugCamp.de, you can subscribe to the </span>
+        <span class="de">Wenn Sie der Community hinter LugCamp.de folgen möchten, können Sie sich and der</span>
+        <a href="http://lists.lugcamp.org/cgi-bin/mailman/listinfo/teilnehmer">LugCamp Teilnehmer mailist</a>
+        <span class="de">anmelden</span>.
+      </div>
+      <div class="da">På mailinglisten er sproget tysk, men de fleste forstår engelsk.</div>
+      <div class="en">The language on the mailing-list is german, but most understands english.</div>
+      
     </p>
   </div>
 
