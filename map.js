@@ -120,11 +120,11 @@ L.marker([46.616,10.333]).addTo(osmap).bindPopup("2011 Tschierv (CH)");
 L.marker([54.833, 9.550]).addTo(osmap).bindPopup("2012 Glücksburg / Holnis (D)");
 L.marker([51.267, 7.184]).addTo(osmap).bindPopup("2013 Wuppertal (D)");
 L.marker([53.565,10.001]).addTo(osmap).bindPopup("2014 Hamburg (D)");
-L.marker([51.033, 7.650]).addTo(osmap).bindPopup("2015 Bergneustadt (D)");
+L.marker([51.016, 7.661]).addTo(osmap).bindPopup("2015 Bergneustadt (D)");
 L.marker([49.133, 8.600]).addTo(osmap).bindPopup("2016 Bruchsal (D)");
 L.marker([54.630, 8.983]).addTo(osmap).bindPopup("2017 Bredstedt (D)");
 L.marker([51.102, 7.012]).addTo(osmap).bindPopup("2018 Leichlingen (D)");
 L.marker([54.964, 9.655]).addTo(osmap).bindPopup("2019 Ullerup (DK)");
-L.marker([51.033, 7.650]).addTo(osmap).bindPopup("2020 Bergneustadt (D)");
+L.marker([51.017, 7.662]).addTo(osmap).bindPopup("2020 Bergneustadt (D)");
 L.marker([54.782, 9.399]).addTo(osmap).bindPopup("2021 Flensburg (D)");
 //54.96380/9.65493
