@@ -125,4 +125,6 @@ L.marker([49.133, 8.600]).addTo(osmap).bindPopup("2016 Bruchsal (D)");
 L.marker([54.630, 8.983]).addTo(osmap).bindPopup("2017 Bredstedt (D)");
 L.marker([51.102, 7.012]).addTo(osmap).bindPopup("2018 Leichlingen (D)");
 L.marker([54.964, 9.655]).addTo(osmap).bindPopup("2019 Ullerup (DK)");
+L.marker([51.033, 7.650]).addTo(osmap).bindPopup("2020 Bergneustadt (D)");
+L.marker([54.782, 9.399]).addTo(osmap).bindPopup("2021 Flensburg (D)");
 //54.96380/9.65493
